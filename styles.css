@@ -1,12 +1,7 @@
 .contenedor-img-pentagrama{
     max-width: 80%;
-    min-height: auto;
+    height: 100px;
     border: 3px solid black;
-    margin: auto;
+    margin: 0 auto;
 }
-.contenedor-img-pentagrama img{
-    width: 100%;
-    min-height:240px;
-    margin: auto;
-    object-fit:cover;
-}
+ 
