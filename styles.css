@@ -1,0 +1,12 @@
+.contenedor-img-pentagrama{
+    max-width: 80%;
+    min-height: auto;
+    border: 3px solid black;
+    margin: auto;
+}
+.contenedor-img-pentagrama img{
+    width: 100%;
+    min-height:240px;
+    margin: auto;
+    object-fit:cover;
+}
