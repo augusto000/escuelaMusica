@@ -14,12 +14,10 @@ html{
 .contenedor-img-practicando{
     display: flex;
     justify-content: center;
-    
-}
-.contenedor-img-practicando{
     max-width: 70%;
     height: 300px;    
     margin: 0 auto;
+    
 }
 .contenedor-img-practicando img{
     width: 70vw;
