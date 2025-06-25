@@ -1,21 +1,41 @@
+
 *{
     margin:0;
-    padding: 0;
+    padding:0;
     box-sizing: border-box;
 }
 html{
     scroll-behavior: smooth;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
 }
 .contenedor-img-pentagrama{
-    max-width: 80%; 
-    max-height: 260px;
-    min-height: 2vh;   
-    border:1px solid black;
+    max-width: 70%;
+    height: 300px;
+    border: 1px solid orangered;
     margin: 0 auto;
+    
 }
- img{
-    width: 100%;
-    max-height: 260px; 
-    min-height: 100px;  
-    object-fit: cover;
- }
+.contenedor-img-pentagrama img{
+    width: 70vw;
+    height: 350px;  
+  
+} 
+/*  nav  */
+ul{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 70%;
+    list-style: none;
+    margin:auto;
+    background-color: orangered;
+    padding: 1rem;
+}
+ul a{
+    text-decoration: none; 
+
+}
