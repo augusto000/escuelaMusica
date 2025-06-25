@@ -9,33 +9,46 @@ html{
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
-    font-size: 2rem;
+    font-style: normal;    
 }
-.contenedor-img-pentagrama{
-    max-width: 70%;
-    height: 300px;
-    border: 1px solid orangered;
-    margin: 0 auto;
+.contenedor-img-practicando{
+    display: flex;
+    justify-content: center;
     
 }
-.contenedor-img-pentagrama img{
+.contenedor-img-practicando{
+    max-width: 70%;
+    height: 300px;    
+    margin: 0 auto;
+}
+.contenedor-img-practicando img{
     width: 70vw;
-    height: 350px;  
-  
+    max-height: 300px;  
 } 
 /*  nav  */
-ul{
+#lista-ul{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 70%;
     list-style: none;
     margin:auto;
     background-color: orangered;
+    max-width: 70%;
     padding: 1rem;
 }
-ul a{
-    text-decoration: none; 
+li{ 
+    min-height: 50px;  
+    }
+ a{
+   text-decoration: none; 
+   font-size:clamp(20px, 4vw + 1rem, 30px);
+   font-weight: 800;
+   cursor: pointer;
+   color:rgba(rgb(4, 10, 88), green, blue, 45);
 
 }
+a:hover{
+    color: olivedrab;
+    transition: 2s;   
+}
+
