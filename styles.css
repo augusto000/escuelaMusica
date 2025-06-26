@@ -62,18 +62,19 @@ a:hover{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 auto;
+    margin: auto ;
     max-width: 79%;
     height: auto;
     background-color: chocolate;
     gap: 1px;
 }
 .izq{
+    display: flex;
     flex-wrap: wrap;
     max-width: 25vw;
-    max-height: 100px;
-    background-color:red;
+    max-height: 99px;
+    background-color:rgb(131, 117, 117);
     border: 1px solid black;
     margin: 0;
-    padding: 0;
+    padding: .2rem;
 }
