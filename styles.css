@@ -34,6 +34,14 @@ html{
     margin:auto;
     background-color: orangered;
     padding: 1rem;
+    min-height: 120px;
+}
+li{
+    align-items: flex-end;
+    padding-top: 3.5rem;
+    font-weight: 700;
+    font-size: clamp(15px, 4vh +1rem,20px);
+    max-height: 200px;
 }
 ul a{
     text-decoration: none; 
