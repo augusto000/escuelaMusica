@@ -22,7 +22,7 @@ html{
 .contenedor-img-practicando img{
     width: 70vw;
     min-height: 150px;  
-    object-fit: contain; 
+    object-fit: cover; 
 } 
 /*  nav  */
 #lista-ul{
