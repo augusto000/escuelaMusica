@@ -14,15 +14,13 @@ html{
 }
 .contenedor-img-pentagrama{
     max-width: 70%;
-    height: 300px;
-    border: 1px solid orangered;
-    margin: 0 auto;
-    
+    min-height: auto;
+   margin:auto ;    
 }
 .contenedor-img-pentagrama img{
     width: 70vw;
-    height: 350px;  
-  
+    max-height:310px;
+    min-height: auto;    
 } 
 /*  nav  */
 ul{
@@ -30,12 +28,22 @@ ul{
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 70%;
-    list-style: none;
-    margin:auto;
+    list-style: none;    
     background-color: orangered;
-    padding: 1rem;
+    margin:0 auto;    
 }
-ul a{
-    text-decoration: none; 
+li{
+    margin: 0 auto;
+    height: 50px;    
+}
+li a{
+    margin:auto;
+    text-decoration: none;
+}
+header{
+    color: red;
+    padding: 0;
+    margin: -10px auto
+    ;
+}
 
-}
