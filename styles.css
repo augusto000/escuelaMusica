@@ -71,10 +71,14 @@ a:hover{
 .izq{
     display: flex;
     flex-wrap: wrap;
-    max-width: 25vw;
-    max-height: 99px;
+    width: auto;
+    max-height: auto;
     background-color:rgb(131, 117, 117);
     border: 1px solid black;
     margin: 0;
     padding: .2rem;
+}
+.izq > iframe{
+    min-width: auto;
+    min-height: 20px;
 }
