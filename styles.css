@@ -27,7 +27,7 @@ html{
 /*  nav  */
 #lista-ul{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     max-width: 70%;
     max-height: 150px;
@@ -37,7 +37,7 @@ html{
 }
 li{
     font-size: 1.5rem;   
-    font-weight: 700px;
+    font-weight:700px;
     min-height: 50px;
     padding-top: .5rem;
 }
