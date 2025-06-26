@@ -15,21 +15,29 @@ html{
     display: flex;
     justify-content: center;
     max-width: 80%;
-    height: auto;    
-    margin: 0 auto;
-    
+    height: 320px;    
+    margin: 0 auto;  
+}
+/*efecto al contenedor de la imagen*/
+.contenedor-img-practicando:hover img{
+   filter: brightness(1);
+   transition: all 2s;
+   transform: scale(1.005);
 }
 .contenedor-img-practicando img{
-    width: 80vw;
-    min-height: 150px;  
-    object-fit: cover; 
+    width: 79vw;
+    min-height: 150px; 
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(.5);/*oscurece la imagen*/    
 } 
 /*  nav  */
 #lista-ul{
     display:flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-width: 80%;
+    max-width: 79%;
     max-height: 150px;
     list-style: none;
     margin:auto;
