@@ -15,14 +15,14 @@ html{
     display: flex;
     justify-content: center;
     max-width: 70%;
-    height: 300px;    
+    height: auto;    
     margin: 0 auto;
     
 }
 .contenedor-img-practicando img{
     width: 70vw;
-    height: 350px;  
-  
+    min-height: 150px;  
+    object-fit: contain; 
 } 
 /*  nav  */
 #lista-ul{
@@ -30,20 +30,22 @@ html{
     justify-content: space-around;
     flex-wrap: wrap;
     max-width: 70%;
+    max-height: 150px;
     list-style: none;
     margin:auto;
     background-color: orangered;
-    padding: 1rem;
-    min-height: 120px;
 }
 li{
-    align-items: flex-end;
-    padding-top: 3.5rem;
-    font-weight: 700;
-    font-size: clamp(15px, 4vh +1rem,20px);
-    max-height: 200px;
+    font-size: 1.5rem;   
+    font-weight: 700px;
+    min-height: 50px;
+    padding-top: .5rem;
 }
 ul a{
     text-decoration: none; 
 
+}
+a:hover{
+    color: white;
+    transition: 2s;
 }
