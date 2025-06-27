@@ -59,8 +59,13 @@ a:hover{
 /*Class contenedor-div*/
 .contenedor-div{
     display: flex;
+<<<<<<< HEAD
     justify-content: flex-start;
     flex-wrap: nowrap;
+=======
+    justify-content: space-between;
+      flex-wrap: nowrap;
+>>>>>>> c606dce5d0d03511a780d7d399f4b9c568ebf98c
     align-items: center;
     margin: auto ;
     max-width: 79%;
