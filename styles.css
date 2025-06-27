@@ -59,23 +59,20 @@ a:hover{
 /*Class contenedor-div*/
 .contenedor-div{
     display: flex;
-
+    flex-shrink: 1;
     justify-content: flex-start;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     align-items: center;
     margin: auto ;
     max-width: 79%;
-    height: 130px;
-    background-color: chocolate;
-    
+    height: 200px;
+    background-color: chocolate;   
+     
 }
 .izq{
     display: flex;
     flex-wrap: wrap;
-    width: auto;
+    min-width: auto;
     min-height: 80px;
     background-color:rgb(131, 117, 117);
     border: 1px solid black;
@@ -83,7 +80,8 @@ a:hover{
     padding: .5rem;
 }
 .izq > iframe{
-    min-width: auto;
+    flex-basis: auto;
+    min-width: 100px;
     min-height: 20px;
     margin: 1rem ;
 }
@@ -94,8 +92,21 @@ a:hover{
     border: 0px double orangered;    
 }
 .derecha{
+    display: flex;
+    align-items: center;
     width:100%;
+    max-width:590px;
     text-align: justify;
     text-indent: 4rem;
-    padding: 0 .5rem;
+    padding:0 .5rem;
+    height: 250px;
+            
+}
+.derecha #texto-fila1{
+    
+    font-size: clamp(.6rem,1rem, 1.5rem);
+    vertical-align: bottom; 
+    max-height:100%;  
+    margin: auto; 
+    padding-top: 1.5rem;
 }
