@@ -60,7 +60,7 @@ a:hover{
 .contenedor-div{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+      flex-wrap: nowrap;
     align-items: center;
     margin: auto ;
     max-width: 79%;
@@ -69,16 +69,25 @@ a:hover{
     gap: 1px;
 }
 .izq{
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
+    display: flex; 
+    max-width: 20%;
     max-height: auto;
     background-color:rgb(131, 117, 117);
     border: 1px solid black;
     margin: 0;
+    height: 130px;
     padding: .2rem;
+
 }
 .izq > iframe{
-    min-width: auto;
-    min-height: 20px;
+        
+    max-width: 200px;
+    min-height: auto;
 }
+.contenedor-div .centro{
+    flex-wrap: wrap;
+    min-height: 130px;
+    width: 40px;
+    background-color: rgb(235, 235, 239);
+    overflow: hidden;
+}   
