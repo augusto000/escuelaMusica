@@ -59,26 +59,39 @@ a:hover{
 /*Class contenedor-div*/
 .contenedor-div{
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     align-items: center;
     margin: auto ;
     max-width: 79%;
-    height: auto;
+    height: 130px;
     background-color: chocolate;
-    gap: 1px;
+    
 }
 .izq{
     display: flex;
     flex-wrap: wrap;
     width: auto;
-    max-height: auto;
+    min-height: 80px;
     background-color:rgb(131, 117, 117);
     border: 1px solid black;
     margin: 0;
-    padding: .2rem;
+    padding: .5rem;
 }
 .izq > iframe{
     min-width: auto;
     min-height: 20px;
+    margin: 1rem ;
+}
+.centro{
+    width: 50px;
+    min-height: 100%;
+    background-color: whitesmoke;
+    border: 0px double orangered;    
+}
+.derecha{
+    width:100%;
+    text-align: justify;
+    text-indent: 4rem;
+    padding: 0 .5rem;
 }
