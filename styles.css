@@ -95,12 +95,18 @@ a:hover{
     align-items: center;
     width:80%;
     max-width:590px;
-    text-align: justify;
+    text-align:     justify;
     text-indent: 4rem;
     padding:0 .5rem;
     height: 350px;  
-    font-size: clamp(.6rem,.8rem, 1.5rem);
-              
+    font-size: clamp(.6rem, .8rem, .3rem);              
+}
+.derecha #texto-fila1{    
+    font-size: clamp(.6rem, .8rem,.3rem);
+    vertical-align: bottom; 
+    max-height:80%;  
+    margin: auto; 
+    padding-top: 1.5rem;
 }
 .derecha2{
     display: flex;
@@ -111,9 +117,9 @@ a:hover{
     text-indent: 4rem;
     padding:0 .5rem;
     height: 350px;            
-}
+}   
 .derecha2 #texto-fila2{    
-    font-size: clamp(.6rem,.8rem, 1.5rem);
+    font-size: clamp(.6rem,.8rem, .3rem);
     vertical-align: bottom; 
     max-height:80%;  
     margin: auto; 
@@ -137,4 +143,16 @@ a:hover{
     background-color: whitesmoke;
     border: 0px double orangered;    
 }
-
+.tabla-tus-datos{
+    display: flex;
+    justify-content: center;
+    max-width:79vw;
+    background-color: orangered;    
+    margin: auto;
+    color: #432371;
+    border: 1px solid whitesmoke;
+}
+.tabla-tus-datos span{
+    height: 40px;
+    font-size: clamp(14px, 2rem, 24px);
+}
