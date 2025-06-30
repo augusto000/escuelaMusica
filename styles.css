@@ -94,15 +94,15 @@ a:hover{
     display: flex;
     align-items: center;
     width:80%;
-    max-width:590px;
+    max-width:610px;
     text-align:     justify;
     text-indent: 4rem;
     padding:0 .5rem;
     height: 350px;  
-    font-size: clamp(.6rem, .8rem, .3rem);              
+                
 }
 .derecha #texto-fila1{    
-    font-size: clamp(.6rem, .8rem,.3rem);
+   font-size: clamp(.5rem, .3rem, .2rem);
     vertical-align: bottom; 
     max-height:80%;  
     margin: auto; 
