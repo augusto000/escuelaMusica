@@ -11,6 +11,11 @@ html{
     font-weight: 500;
     font-style: normal;    
 }
+body{min-width: 500px;
+     flex-shrink:1;
+     flex-grow: 1;
+     flex-basis: 80%;
+}
 .contenedor-img-practicando{
     display: flex;
     justify-content: center;
@@ -55,6 +60,11 @@ li a{
 a:hover{
     color: white;
     transition: 2s;
+}
+main{
+    background-color: orangered;
+    max-width: 79%;
+    margin: auto;
 }
 /*Class contenedor-div*/
 .contenedor-div{
@@ -101,29 +111,32 @@ a:hover{
                 
 }
 .derecha #texto-fila1{    
-   font-size: clamp(.6rem, .5rem, .4rem);
-    vertical-align: bottom; 
+   font-size: clamp(2vw, 3vw, 1vw);
+   vertical-align: bottom;
+   text-indent: 6vw; 
+   line-height: 3vw;
     max-height:80%;  
     margin: auto; 
-    padding-top: 1.5rem;
+    padding-top: .1rem;
 }
 .derecha2{
     display: flex;
     align-items: center;
     width:80%;
-    max-width:590px;
+    max-width:610px;
     text-align: justify;
     text-indent: 4rem;
-    padding:0 .5rem;
+    padding:1rem;
     height: 350px;            
 }   
 .derecha2 #texto-fila2{    
-    font-size: clamp(.6rem,.8rem, .3rem);
-    vertical-align: bottom;
-    line-height:1rem; 
+    font-size: clamp(2vw, 3vw, 1vw);
+   vertical-align: bottom;
+   text-indent: 6vw; 
+   line-height: 3vw;
     max-height:80%;  
     margin: auto; 
-    padding-top: 1.5rem;
+    padding-top: 2rem;
 }
 .contenedor-div2{
     display: flex;
