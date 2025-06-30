@@ -14,7 +14,7 @@ html{
 .contenedor-img-practicando{
     display: flex;
     justify-content: center;
-    max-width: 80%;
+    max-width: 79%;
     height: 320px;    
     margin: 0 auto;  
 }
