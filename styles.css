@@ -95,14 +95,14 @@ a:hover{
     align-items: center;
     width:80%;
     max-width:610px;
-    text-align:     justify;
+    text-align:justify;
     text-indent: 4rem;
     padding:0 .5rem;
     height: 350px;  
                 
 }
 .derecha #texto-fila1{    
-   font-size: clamp(.5rem, .3rem, .2rem);
+   font-size: clamp(.6rem, .5rem, .4rem);
     vertical-align: bottom; 
     max-height:80%;  
     margin: auto; 
@@ -146,13 +146,22 @@ a:hover{
 .tabla-tus-datos{
     display: flex;
     justify-content: center;
-    max-width:79vw;
+    width:79vw;
     background-color: orangered;    
     margin: auto;
     color: #432371;
-    border: 1px solid whitesmoke;
+    border: 1   px solid whitesmoke;
 }
 .tabla-tus-datos span{
     height: 40px;
     font-size: clamp(14px, 2rem, 24px);
+
+    text-align: center;
+}
+table{
+    width:79vw;   
+    margin: auto;
+    border: 1px solid black;
+    font-size: clamp(.7px, .6rem, 12px);
+    border-collapse: collapse;
 }
