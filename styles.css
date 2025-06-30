@@ -143,6 +143,37 @@ a:hover{
     background-color: whitesmoke;
     border: 0px double orangered;    
 }
+div h2{
+    width: 79%;
+    background-color: chocolate;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid white;
+}
+#cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: chocolate;
+    width:59%;
+    margin: auto;
+    color:#432371;
+    gap: .9rem ;
+    padding: 1.5rem;
+}
+#cards img{
+    border-radius: 10px;
+}
+ h2 {
+text-align: center;     
+     background-color: red;
+     margin: auto;
+     
+}
+/*TABLA*/
 .tabla-tus-datos{
     display: flex;
     justify-content: center;
@@ -150,18 +181,19 @@ a:hover{
     background-color: orangered;    
     margin: auto;
     color: #432371;
-    border: 1   px solid whitesmoke;
     border: 1px solid black;
 }
 .tabla-tus-datos span{
-    height: 40px;
+    height: 30px;
     font-size: clamp(14px, 2rem, 24px);
+    align-items: center;
     text-align: center;    
 }
 table, th, td{
     width:79%;   
     margin: 0 auto;
     text-align: center;
+    vertical-align:middle;
     padding: .1rem;
     border: 1px solid black;
     font-size: clamp(.7px, .6rem, 12px);
