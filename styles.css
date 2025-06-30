@@ -65,7 +65,7 @@ a:hover{
     align-items: center;
     margin: auto ;
     max-width: 79%;
-    height: 200px;
+    height: 150px;
     background-color: chocolate;       
 }
 .izq{
@@ -83,12 +83,12 @@ a:hover{
     min-height: 20px;
     margin: 1rem ;
 }
-.centro{
-    width: 50px;
+.contenedor-div .centro{
+    width:15px;
     min-height: 100%;
     background-color: whitesmoke;
-    border: 0px double orangered; 
-    padding: 1rem;   
+     
+      
 }
 .derecha{
     display: flex;
@@ -134,11 +134,11 @@ a:hover{
     align-items: center;
     margin: auto ;
     max-width: 79%;
-    height: 200px;
+    height: 150px;
     background-color: orangered; 
 }
 .centro2{
-    width: 60px;
+    width: 15px;
     min-height: 100%;
     background-color: whitesmoke;
     border: 0px double orangered;    
@@ -151,11 +151,12 @@ a:hover{
     margin: auto;
     color: #432371;
     border: 1   px solid whitesmoke;
+    border: 1px solid black;
 }
 .tabla-tus-datos span{
     height: 40px;
     font-size: clamp(14px, 2rem, 24px);
-    text-align: center;
+    text-align: center;    
 }
 table, th, td{
     width:79%;   
