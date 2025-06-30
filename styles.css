@@ -111,7 +111,7 @@ main{
                 
 }
 .derecha #texto-fila1{    
-   font-size: clamp(2vw, 3vw, 1vw);
+   font-size: clamp(1.5vw, 3vw, 1vw);
    vertical-align: bottom;
    text-indent: 6vw; 
    line-height: 3vw;
@@ -130,7 +130,7 @@ main{
     height: 350px;            
 }   
 .derecha2 #texto-fila2{    
-    font-size: clamp(2vw, 3vw, 1vw);
+    font-size: clamp(1.5vw, 3vw, 1vw);
    vertical-align: bottom;
    text-indent: 6vw; 
    line-height: 3vw;
