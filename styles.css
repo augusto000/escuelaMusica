@@ -14,7 +14,7 @@ html{
 .contenedor-img-practicando{
     display: flex;
     justify-content: center;
-    max-width: 79%;
+    max-width: 78.9%;
     height: 320px;    
     margin: 0 auto;  
 }
@@ -86,9 +86,7 @@ a:hover{
 .contenedor-div .centro{
     width:15px;
     min-height: 100%;
-    background-color: whitesmoke;
-     
-      
+    background-color: whitesmoke;      
 }
 .derecha{
     display: flex;
@@ -97,7 +95,8 @@ a:hover{
     max-width:610px;
     text-align:justify;
     text-indent: 4rem;
-    padding:0 .5rem;
+    line-height: 1.1rem;
+    padding:1rem ;
     height: 350px;  
                 
 }
@@ -120,7 +119,8 @@ a:hover{
 }   
 .derecha2 #texto-fila2{    
     font-size: clamp(.6rem,.8rem, .3rem);
-    vertical-align: bottom; 
+    vertical-align: bottom;
+    line-height:1rem; 
     max-height:80%;  
     margin: auto; 
     padding-top: 1.5rem;
