@@ -221,3 +221,8 @@ table, th, td{
     font-size: clamp(.7px, .6rem, 12px);
     border-collapse: collapse;
 }
+#contenedor-formulario{
+    border: 2px outset black;
+    max-width: 62vw;
+    margin: auto;
+}
