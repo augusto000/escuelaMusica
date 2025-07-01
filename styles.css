@@ -211,14 +211,22 @@ text-align: center;
     align-items: center;
     text-align: center;    
 }
-table, th, td{
-    width:79%;   
+section{
+    max-width: 100%;
+     overflow-x: auto;
+     border: 1px solid #ccc;
+}
+table{
+   
+    width:100%; 
+    min-width: 10%;
+    height: auto;  
     margin: 0 auto;
     text-align: center;
     vertical-align:middle;
     padding: .1rem;
     border: 1px solid black;
-    font-size: clamp(.7px, .6rem, 12px);
+    font-size: clamp(.7rem, .3rem, .8rem );
     border-collapse: collapse;
 }
 #contenedor-formulario form{
