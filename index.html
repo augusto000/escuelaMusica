@@ -72,6 +72,7 @@
             <th>Tel&eacute;fono</th>
             <th>Mail</th>
             <th>Provincia</th>
+            <th>Observaciones :</th>
            </tr> 
          </thead>
         
@@ -82,10 +83,38 @@
           <td>3813323498</td>
           <td>augustoacha@gmail.com</td>
           <td>San Miguel de Tucum&aacute;</td>
+          <td>Datos ya ingresados correctamente!</td>
          </tbody>
         
       </table>
     </section>
+    <div>
+      <form action="https://formspree.io/f/xeoknnow" method="post">
+          <h2>Ingres&aacute;tus datos</h2>
+       <label for="nombre" name="nombre">Nombre :
+         <input type="text" id="nombre" name="nombre" maxlength="10">
+       </label>
+       <label for="apellido" name="apellido">Apellido :
+        <input type="text" id="apellido" name="apellido" maxlength="10">
+       </label>
+       <label for="direccion" name="direccion">Direcci&oacute;n :
+        <input type="text" name="direccion" maxlength="10">
+       </label>
+       <label for="Telefono" name="telefono">Tel&eacute;fono :
+        <input type="text" name="telefono" maxlength="10">
+       </label>
+       <label for="email" name="email">Email : :
+        <input type="text" name="email" maxlength="10">
+       </label>
+       <label for="provincia" name="provincia">Provincia :
+        <input type="text" name="provincia" maxlength="10">
+       </label>
+       <label for="observaciones" name="observaciones">Observaciones :
+        <input type="text" name="Observaciones" maxlength="10">
+       </label>
+      </form>
+
+    </div>
     
   </main>
     <script src="/scripts.js"></script>
