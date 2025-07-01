@@ -221,8 +221,16 @@ table, th, td{
     font-size: clamp(.7px, .6rem, 12px);
     border-collapse: collapse;
 }
-#contenedor-formulario{
+#contenedor-formulario form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     border: 2px outset black;
     max-width: 62vw;
+    height: auto;
     margin: auto;
+
 }
