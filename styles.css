@@ -232,5 +232,9 @@ table, th, td{
     max-width: 62vw;
     height: auto;
     margin: auto;
-
+}
+.itemForm{
+    margin: auto;
+    padding: .5rem;
+    max-width: 30vh;
 }
