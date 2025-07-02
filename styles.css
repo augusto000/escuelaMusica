@@ -105,8 +105,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:80%;
-    max-width:610px;
+    max-width:710px;
     text-align:justify;
     text-indent: 4rem;
     line-height: 1.1rem;
@@ -157,7 +156,7 @@ main{
     background-color: orangered; 
 }
 .centro2{
-    width: 15px;
+    width: 7px;
     min-height: 100%;
     background-color: whitesmoke;
     border: 0px double orangered;    
