@@ -61,8 +61,9 @@
              <img src="media/5.jpeg" alt=""> 
       </div>
     
-    <section>
-      <div class="tabla-tus-datos"><span>Tus datos</span> </div>
+    <section id="sec">
+      <div class="tabla-tus-datos"><span>Tus datos ingresados</span> </div>
+      <div class="responsive-table">
       <table>
          <thead>
            <tr>
@@ -72,6 +73,7 @@
             <th>Tel&eacute;fono</th>
             <th>Mail</th>
             <th>Provincia</th>
+            <th>Observaciones</th>
            </tr> 
          </thead>
         
@@ -81,11 +83,57 @@
           <td>los prados 454</td>
           <td>3813323498</td>
           <td>augustoacha@gmail.com</td>
-          <td>San Miguel de Tucum&aacute;</td>
+          <td>San Miguel de Tucum&aacute;n</td>
+          <td>Datos ya ingresados correctamente!</td>
          </tbody>
         
       </table>
+      </div>
     </section>
+
+    <!--Formulario-->
+    <div id="contenedor-formulario">
+      <form action="https://formspree.io/f/xeoknnow" method="post">
+          <h2>Ingres&aacute; tus datos</h2>
+        <div class="itemForm contenedor-item1-form">
+            <label for="nombre" name="nombre">Nombre :
+                <input type="text" id="nombre" name="nombre" maxlength="20">
+          </label>
+        </div>
+        <div class="itemForm contenedor-item2-form">
+          <label for="apellido" name="apellido">Apellido :
+              <input type="text" id="apellido" name="apellido" maxlength="20">
+          </label>
+        </div>  
+        <div class="itemForm contenedor-item3-form">
+          <label for="direccion" name="direccion">Direcci&oacute;n :
+             <input type="text" id="direccion" name="direccion" maxlength="10">
+          </label>
+        </div>        
+       
+        <div class="itemForm contenedor-item4-form">
+          <label for="telefono" name="telefono">Tel&eacute;fono :
+             <input type="text" id="telefono" name="telefono" maxlength="13">
+          </label>
+        </div>
+        <div class="itemForm contenedor-item5-form">
+          <label for="email" name="email">Email :
+            <input type="mail" id="email" name="email" maxlength="30" placeholder="@">
+          </label>
+        </div>       
+        <div class="itemForm contenedor-item6-form">
+          <label for="provincia" name="provincia">Provincia :
+              <input type="text" id="provincia" name="provincia" maxlength="20">
+          </label>
+        </div>
+        <div class="itemForm contenedor-item7-form">
+             <label for="observaciones" name="observaciones">Observaciones :</label>
+             <textarea name="Observaciones" id="observaciones" rows="4" cols="26" placeholder="..escribe tu comentario"> </textarea>
+        </div>       
+       <button> Enviar </button>   
+      </form>
+
+    </div>
     <form action="">
          <div>
           
