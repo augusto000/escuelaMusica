@@ -17,10 +17,8 @@ body{min-width: 500px;
      flex-basis: 80%;
 }
 .contenedor-img-practicando{
-    display: flex;
-    justify-content: center;
-    max-width: 78.9%;
-    height: 320px;    
+    
+    width: 78.9%;
     margin: 0 auto;  
 }
 /*efecto al contenedor de la imagen*/
@@ -30,8 +28,9 @@ body{min-width: 500px;
    transform: scale(1.005);
 }
 .contenedor-img-practicando img{
-    width: 79vw;
-    min-height: 150px; 
+    max-width: 100%;
+    height: auto;
+    display: block; 
     overflow: hidden;
     object-fit: cover;
     object-position: center;
@@ -166,9 +165,9 @@ div h2{
     text-align: center;
     align-content: center;
     margin:1px auto;
-    height: 11vh;
+    height: 9vh;
     vertical-align:baseline;
-    margin-top: 1.8rem;
+    margin: 0 auto;
     border: 3px groove orangered;
     color: #432371;
     font-size: clamp(5vh, 1rem, 8vh);
