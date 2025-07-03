@@ -162,7 +162,7 @@ main{
     border: 0px double orangered;    
 }
 div h2{
-    width: 79%;
+    width: 85%;
     background-color: chocolate;
     text-align: center;
     align-content: center;
@@ -191,11 +191,9 @@ div h2{
     border-radius: 10px;
 }
  .table-container, span {
-    text-align: center;     
-     background-color: chocolate;
+    text-align: center;       
      margin: auto;
      width: 100%;
-
     height: 30px;
     font-size: clamp(14px, 2rem, 24px);
     align-items: center;
