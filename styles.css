@@ -177,11 +177,11 @@ div h2{
 #cards{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     background-color: chocolate;
-    width:59%;
+    width:99%;
     margin: auto;
     color:#432371;
     gap: .9rem ;
