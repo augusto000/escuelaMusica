@@ -1,12 +1,11 @@
 let titulo = document.getElementsByTagName('title');
-console.log(titulo[0].textContent='Clases de Música');
+console.log(titulo[0].textContent='CM');
 
-let cards_= document.querySelectorAll("cards");
+let divs = document.querySelectorAll("#cards");
+console.log(divs[0])
+let nuevaImg = document.createElement('img');
+    nuevaImg.src="media/6.jpeg";
+    nuevaImg.alt="Nueva imagen del Curso de Guitarra";
+    nuevaImg.title="Imagen del Curso de Guitarra";
+divs[0].appendChild(nuevaImg);
 
-for (let item in cards_){
-    console.log('soy '+ item);
-      if (item === 'img'){
-        
-        console.log(`soy :${cards_[item]}`);
-    }
-}
