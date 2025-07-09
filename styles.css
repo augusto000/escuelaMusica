@@ -255,3 +255,7 @@ th{
     padding: .5rem;
     max-width: 28vh;
 }
+#observaciones{
+    /* no se puede redimensionar el campo observaciones*/
+    resize: none;
+}
