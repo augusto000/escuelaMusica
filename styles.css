@@ -161,7 +161,10 @@ main{
     background-color: whitesmoke;
     border: 0px double orangered;    
 }
-div h2{
+.contenedor-productos{
+    margin-top:1.5rem;
+}
+.contenedor-productos h2{
     width: 65%;
     background-color: chocolate;
     text-align: center;
