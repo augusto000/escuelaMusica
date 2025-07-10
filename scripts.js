@@ -5,8 +5,6 @@ let divss = document.getElementById('cards');
 let item = divss[0];
 //console.log('soy :'+item);
 
-
-
 let imgs = document.getElementById("cards");
 for(let i=1; i< 13; i++){
       //acomodar los tamañ0s  de esas fotos la 8 y la 12
@@ -22,11 +20,12 @@ for(let i=1; i< 13; i++){
 }
 //console.log(divs);
 let boton = document.getElementById('mibtn');
-console.log('soy el boton :'+boton);
+
 let cajaCarrito = document.getElementById('cajaFlotante');
 
 function muestro(){
     console.log("dentro de la función Muestro");
+    prompt("dentro de la funcion muestro");
     }
 
 boton.addEventListener("click", muestro);
