@@ -262,15 +262,19 @@ th{
     /* no se puede redimensionar el campo observaciones*/
     resize: none;
 }
-#flotante{
-    width: 450px;
-    height: 200px;
+/*caja de selección del carrito flotante y traslucida*/
+#cajaFlotante{
+    width: 350px;
+    height: 450px;
     border: 2px solid blue;
     margin: auto;
     padding: 10px;
     background-color: lightcoral;
     position:fixed;
     top:0;
-    right:1rem;
-    z-index: 20000;;
+    right:0rem;
+    z-index: 20000;
+    opacity: .80;
+    display: none;
+    
 }

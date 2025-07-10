@@ -1,9 +1,9 @@
 let titulo = document.getElementsByTagName('title');
-console.log(titulo[0].textContent='Clases de Música');
+console.log(titulo[0].textContent='CMú');
 
 let divss = document.getElementById('cards');
 let item = divss[0];
-console.log('soy :'+item);
+//console.log('soy :'+item);
 
 
 
@@ -16,16 +16,16 @@ for(let i=1; i< 13; i++){
       else{
       let nuevoElement = document.createElement('img');
       nuevoElement.src = "media/"+`${i}`+".jpeg";
-      console.log(nuevoElement);
+  //    console.log(nuevoElement);
       imgs.appendChild(nuevoElement);
       }
 }
 //console.log(divs);
-let boton = document.getElementById('btn');
-console.log('soy el boton :'+boton);
+let boton = document.getElementById('mibtn');
+//console.log('soy el boton :'+boton);
+let cajaCarrito = document.getElementById('cajaFlotante');
 
+boton.addEventListener("click", muestro);
 function muestro(){
-    
-}
-boton.addEventListener('onclick', muestro);
-
+    console.log("dentro de la función Muestro");
+    }
