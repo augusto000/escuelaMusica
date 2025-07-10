@@ -22,10 +22,11 @@ for(let i=1; i< 13; i++){
 }
 //console.log(divs);
 let boton = document.getElementById('mibtn');
-//console.log('soy el boton :'+boton);
+console.log('soy el boton :'+boton);
 let cajaCarrito = document.getElementById('cajaFlotante');
 
-boton.addEventListener("click", muestro);
 function muestro(){
     console.log("dentro de la función Muestro");
     }
+
+boton.addEventListener("click", muestro);
