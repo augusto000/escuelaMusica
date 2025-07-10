@@ -24,8 +24,7 @@ let boton = document.getElementById('mibtn');
 let cajaCarrito = document.getElementById('cajaFlotante');
 
 function muestro(event){
-      event.preventDefault();
-      
+      event.preventDefault();      
     
     }
 
