@@ -201,7 +201,7 @@ main{
     font-size: clamp(14px, 2rem, 24px);
     align-items: center;
     text-align: center;  
-     
+    
 }
 /*TABLA*/
 .tabla-tus-datos{
@@ -261,4 +261,16 @@ th{
 #observaciones{
     /* no se puede redimensionar el campo observaciones*/
     resize: none;
+}
+#flotante{
+    width: 450px;
+    height: 200px;
+    border: 2px solid blue;
+    margin: auto;
+    padding: 10px;
+    background-color: lightcoral;
+    position:fixed;
+    top:0;
+    right:1rem;
+    z-index: 20000;;
 }

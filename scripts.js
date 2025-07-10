@@ -1,8 +1,13 @@
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='Clases de Música');
 
-let imgs = document.getElementById("cards");
+let divss = document.getElementById('cards');
+let item = divss[0];
+console.log('soy :'+item);
 
+
+
+let imgs = document.getElementById("cards");
 for(let i=1; i< 13; i++){
       //acomodar los tamañ0s  de esas fotos la 8 y la 12
       if ((i===8) || (i ===12)){
@@ -15,5 +20,12 @@ for(let i=1; i< 13; i++){
       imgs.appendChild(nuevoElement);
       }
 }
-console.log(divs);
+//console.log(divs);
+let boton = document.getElementById('btn');
+console.log('soy el boton :'+boton);
+
+function muestro(){
+    
+}
+boton.addEventListener('onclick', muestro);
 
