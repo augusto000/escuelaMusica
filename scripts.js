@@ -19,19 +19,36 @@ for(let i=2; i< 13; i++){
       }
 }
 //console.log(divs);
+
+//apunto al boton
 let boton = document.getElementById('mibtn');
+//referenciio la caja flotante
+//let cajaCarrito = document.getElementById('cajaFlotante');
 
-let cajaCarrito = document.getElementById('cajaFlotante');
-//apunto al org/dst del nombre
-let nombreOrg = document.querySelector('#nombreOrg').value;
-prompt(nombreOrg);
-let nombreDst = document.getElementById('nombreDst');
-
-function muestro(event, nombreOrg, nombreDst){
-      event.preventDefault();      
-      nombreDst.textContent = nombreOrg;
+function muestro(event){
+                        //referencio para limpiar el inputText  
+                        let refInputText = document.getElementById('nombreOrg');
+                        //Tomo el valor que contiene a travez de .value
+                        let nombreOrg = document.getElementById('nombreOrg').value;
+                  //si esta vacía la cadena.
+                  if(nombreOrg.trim() !== ''){                        
+                        //apunto al campo destino
+                        let nombreDst = document.getElementById('nombreDst');
+                        nombreDst.innerText = nombreOrg;
+                        refInputText.value = " ";
+                        //que no recargue la página
+                        event.preventDefault();
+                        alert("Datos guardados!");
+                        //hago aparecer la caja del carrito
+                        let cajaFlotante = document.getElementById('cajaFlotante');
+                        cajaFlotante.style.display='flex';
+                  }  
+                  else{
+                        alert(`Atención: debe escribir su nombre`);
+                        //limpiar de todas maneras.
+                        refInputText.value = " ";
+                  }       
     }
-
 boton.addEventListener("click", function(event){
-      muestro(event, nombreOrg, nombreDst);
+         muestro(event);
 });

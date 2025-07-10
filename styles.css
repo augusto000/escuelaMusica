@@ -271,10 +271,9 @@ th{
     padding: 10px;
     background-color: lightcoral;
     position:fixed;
-    top:0;
+    bottom:auto;
     right:0rem;
     z-index: 20000;
     opacity: .80;
-    display: none;
-    
+    display: none;    
 }
