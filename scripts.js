@@ -23,9 +23,10 @@ let boton = document.getElementById('mibtn');
 
 let cajaCarrito = document.getElementById('cajaFlotante');
 
-function muestro(){
-    console.log("dentro de la función Muestro");
-    prompt("dentro de la funcion muestro");
+function muestro(event){
+      event.preventDefault();
+      
+    
     }
 
 boton.addEventListener("click", muestro);
