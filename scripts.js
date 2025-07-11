@@ -88,13 +88,19 @@ function campoNombre(event){
                         cajaFlotante.style.justifyContent='center';
                         cajaFlotante.style.alignItems='top';
                         cajaFlotante.style.flexWrap='wrap';
-    }
-    function verificarDatos(event, nombreOrg, apellidoOrg){
+    }    
+    function verificarDatos(event, nombreOrg, apellidoOrg, emailOrg){
                         //si esta vacía la cadena.
-                  if(nombreOrg.trim() !== ''){                        
+                  if(nombreOrg.trim() !== '' && apellidoOrg.trim() !== '' && emailOrg.trim() !== ''){                        
                         //apunto al campo destino
                         let nombreDst = document.getElementById('nombreDst');
                         nombreDst.innerText = nombreOrg;
+                        //apunto al campo destino
+                        let apellidoDst = document.getElementById('apeDst');
+                        //copiar valor
+                        apellidoDst.innerText = apellidoOrg;
+                        let emailDst = document.getElementById('emailDst');
+                        emailDst.textContent = emailOrg;
                         //refInputText.value = " ";
                         //que no recargue la página
                         //event.preventDefault();
@@ -107,6 +113,7 @@ function campoNombre(event){
                         //No recargar la página                        
                         noRecargarPagina(event);
                   }
+                  /*
                   if(apellidoOrg.trim() !== ''){                        
                         //apunto al campo destino
                         let apellidoDst = document.getElementById('apeDst');
@@ -124,12 +131,22 @@ function campoNombre(event){
                         //limpiarCampos();
                         //No recargar la página                        
                         noRecargarPagina(event);
-                  }
+                  }*/
     }
+    function campoEmail(){
+                        //Tomar el valor del input
+                        let emailOrg = document.getElementById('emailOrg').value;
+                        //referencio emailDst de destino
+                        let emailDst = document.getElementById('emailDst');
+                        //traspasar el valor
+                        
+                        return emailOrg;
+                  }
 boton.addEventListener("click", function(event){
          let nombreOrg = campoNombre(event);
          let apellidoOrg = campoApellido(event);
-         verificarDatos(event, nombreOrg, apellidoOrg);
+         let emailOrg = campoEmail(event);
+         verificarDatos(event, nombreOrg, apellidoOrg,emailOrg);
          //cajaCarrito(event)
          limpiarCampos();
 });
