@@ -1,8 +1,8 @@
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='CMú');
 
-let divss = document.getElementById('cards');
-let item = divss[0];
+//let divss = document.getElementById('cards');
+//let item = divss[0];
 //console.log('soy :'+item);
 
 let imgs = document.getElementById("cards");
@@ -42,6 +42,9 @@ function muestro(event){
                         //hago aparecer la caja del carrito
                         let cajaFlotante = document.getElementById('cajaFlotante');
                         cajaFlotante.style.display='flex';
+                        cajaFlotante.style.justifyContent='center';
+                        cajaFlotante.style.alignItems='top';
+                        cajaFlotante.style.flexWrap='wrap';
                   }  
                   else{
                         alert(`Atención: debe escribir su nombre`);
