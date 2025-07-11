@@ -75,11 +75,18 @@ function campoNombre(event){
           event.preventDefault();
     }
     function limpiarCampos(){
-                        //referencio para limpiar el inputText  
+                        //referencio para limpiar el inputText nombreOrg  
                         let refInputTextNom = document.getElementById('nombreOrg');
                         refInputTextNom.value = " ";
+                        //referencio para limpiar el inputText apellidoOrt
                         let refInputTextApe =document.getElementById('apellidoOrg');
                         refInputTextApe.value = " ";
+                        //referencio para limpiar el inputText emailOrg
+                        let refInputTextEmail = document.getElementById('emailOrg');
+                        refInputTextEmail.value = " ";
+                        //referencio para limpiar el textArea de observacionesOrg
+                        let refInputObservacion = document.getElementById('observacionesOrg');
+                        refInputObservacion.value = " ";
     }
     function cajaCarrito(){
                         //hago aparecer la caja del carrito
@@ -89,9 +96,9 @@ function campoNombre(event){
                         cajaFlotante.style.alignItems='top';
                         cajaFlotante.style.flexWrap='wrap';
     }    
-    function verificarDatos(event, nombreOrg, apellidoOrg, emailOrg){
+    function verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg){
                         //si esta vacía la cadena.
-                  if(nombreOrg.trim() !== '' && apellidoOrg.trim() !== '' && emailOrg.trim() !== ''){                        
+                  if(nombreOrg.trim() !== '' && apellidoOrg.trim() !== '' && emailOrg.trim() !== '' && observacionesOrg.trim() !== ''){                        
                         //apunto al campo destino
                         let nombreDst = document.getElementById('nombreDst');
                         nombreDst.innerText = nombreOrg;
@@ -99,39 +106,21 @@ function campoNombre(event){
                         let apellidoDst = document.getElementById('apeDst');
                         //copiar valor
                         apellidoDst.innerText = apellidoOrg;
+                        //copiar el valor desde el origen al destino
                         let emailDst = document.getElementById('emailDst');
                         emailDst.textContent = emailOrg;
-                        //refInputText.value = " ";
-                        //que no recargue la página
-                        //event.preventDefault();
+                        //copiar el valor desde observacionesDst
+                        let observacionesDst = document.getElementById('observacionesDst');
+                        observacionesDst.textContent = observacionesOrg;
+                        //no recargar la pagina
                         noRecargarPagina(event);
                   }
                   else{
                         alert(`Atención: debe escribir todos sus datos.`);
-                        //limpiar de todas maneras.
-                        //limpiarCampos();
                         //No recargar la página                        
                         noRecargarPagina(event);
                   }
-                  /*
-                  if(apellidoOrg.trim() !== ''){                        
-                        //apunto al campo destino
-                        let apellidoDst = document.getElementById('apeDst');
-                        //copiar valor
-                        apellidoDst.innerText = apellidoOrg;
-                        //refInputText.value = " ";
-                        //que no recargue la página
-                        //event.preventDefault();
-                        //alert("Datos guardados!");
-                        noRecargarPagina(event);                 
-                  }
-                  else{
-                        alert(`Atención: debe escribir todos sus datos.`);
-                        //limpiar de todas maneras.
-                        //limpiarCampos();
-                        //No recargar la página                        
-                        noRecargarPagina(event);
-                  }*/
+                  
     }
     function campoEmail(){
                         //Tomar el valor del input
@@ -139,14 +128,21 @@ function campoNombre(event){
                         //referencio emailDst de destino
                         let emailDst = document.getElementById('emailDst');
                         //traspasar el valor
-                        
                         return emailOrg;
                   }
+      function campoObservacion(event){
+                        //referencio y tomo el valor del input de origen
+                        let observacionesOrg = document.getElementById('observacionesOrg').value;
+                        //retorno el valor
+                        return observacionesOrg;
+      }
 boton.addEventListener("click", function(event){
          let nombreOrg = campoNombre(event);
          let apellidoOrg = campoApellido(event);
          let emailOrg = campoEmail(event);
-         verificarDatos(event, nombreOrg, apellidoOrg,emailOrg);
-         //cajaCarrito(event)
-         limpiarCampos();
+         let observacionesOrg = campoObservacion(event);
+         verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
+         //limpio el formulario
+         limpiarCampos(event);
+         cajaCarrito(event)
 });
