@@ -74,20 +74,6 @@ function campoNombre(event){
     function noRecargarPagina(event){
           event.preventDefault();
     }
-    function limpiarCampos(){
-                        //referencio para limpiar el inputText nombreOrg  
-                        let refInputTextNom = document.getElementById('nombreOrg');
-                        refInputTextNom.value = " ";
-                        //referencio para limpiar el inputText apellidoOrt
-                        let refInputTextApe =document.getElementById('apellidoOrg');
-                        refInputTextApe.value = " ";
-                        //referencio para limpiar el inputText emailOrg
-                        let refInputTextEmail = document.getElementById('emailOrg');
-                        refInputTextEmail.value = " ";
-                        //referencio para limpiar el textArea de observacionesOrg
-                        let refInputObservacion = document.getElementById('observacionesOrg');
-                        refInputObservacion.value = " ";
-    }
     function cajaCarrito(){
                         //hago aparecer la caja del carrito
                         let cajaFlotante = document.getElementById('cajaFlotante');
@@ -113,14 +99,13 @@ function campoNombre(event){
                         let observacionesDst = document.getElementById('observacionesDst');
                         observacionesDst.textContent = observacionesOrg;
                         //no recargar la pagina
-                        noRecargarPagina(event);
+                        //noRecargarPagina(event);
                   }
                   else{
                         alert(`Atención: debe escribir todos sus datos.`);
                         //No recargar la página                        
                         noRecargarPagina(event);
-                  }
-                  
+                  }                  
     }
     function campoEmail(){
                         //Tomar el valor del input
@@ -136,6 +121,20 @@ function campoNombre(event){
                         //retorno el valor
                         return observacionesOrg;
       }
+      function limpiarCampos(){
+                        //referencio para limpiar el inputText nombreOrg  
+                        let refInputTextNom = document.getElementById('nombreOrg');
+                        refInputTextNom.value = " ";
+                        //referencio para limpiar el inputText apellidoOrt
+                        let refInputTextApe =document.getElementById('apellidoOrg');
+                        refInputTextApe.value = " ";
+                        //referencio para limpiar el inputText emailOrg
+                        let refInputTextEmail = document.getElementById('emailOrg');
+                        refInputTextEmail.value = " ";
+                        //referencio para limpiar el textArea de observacionesOrg
+                        let refInputObservacion = document.getElementById('observacionesOrg');
+                        refInputObservacion.value = " ";
+    }
 boton.addEventListener("click", function(event){
          let nombreOrg = campoNombre(event);
          let apellidoOrg = campoApellido(event);
@@ -143,6 +142,6 @@ boton.addEventListener("click", function(event){
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
          //limpio el formulario
-         limpiarCampos(event);
-         cajaCarrito(event)
+         //limpiarCampos();
+         //cajaCarrito(event)
 });
