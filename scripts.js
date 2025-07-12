@@ -14,7 +14,6 @@ for(let i=2; i< 13; i++){
       imgs.appendChild(nuevoElement);
       }
 }
-//console.log(divs);
 
 //apunto al boton
 let boton = document.getElementById('mibtn');
