@@ -99,12 +99,14 @@ function campoNombre(event){
                         let observacionesDst = document.getElementById('observacionesDst');
                         observacionesDst.textContent = observacionesOrg;
                         //no recargar la pagina
-                        //noRecargarPagina(event);
+                        noRecargarPagina(event);
                   }
                   else{
                         alert(`Atención: debe escribir todos sus datos.`);
                         //No recargar la página                        
                         noRecargarPagina(event);
+                        //limpiar el formulario
+                        limpiarCampos(event);
                   }                  
     }
     function campoEmail(){
@@ -121,7 +123,10 @@ function campoNombre(event){
                         //retorno el valor
                         return observacionesOrg;
       }
-      function limpiarCampos(){
+      function limpiarCampos(event){
+                        formulario.reset();
+
+                        /*
                         //referencio para limpiar el inputText nombreOrg  
                         let refInputTextNom = document.getElementById('nombreOrg');
                         refInputTextNom.value = " ";
@@ -134,6 +139,7 @@ function campoNombre(event){
                         //referencio para limpiar el textArea de observacionesOrg
                         let refInputObservacion = document.getElementById('observacionesOrg');
                         refInputObservacion.value = " ";
+                        */
     }
 boton.addEventListener("click", function(event){
          let nombreOrg = campoNombre(event);
@@ -141,7 +147,8 @@ boton.addEventListener("click", function(event){
          let emailOrg = campoEmail(event);
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
+         
          //limpio el formulario
-         //limpiarCampos();
+         limpiarCampos(event);
          //cajaCarrito(event)
 });
