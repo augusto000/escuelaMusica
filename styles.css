@@ -244,6 +244,11 @@ th{
     text-align: center;
     vertical-align: center;
 }
+form h2{
+    color:#432371;
+    text-align:right;
+    margin-left: 2.5rem;
+}
 #contenedor-formulario form{
     display: flex;
     flex-direction: column;
