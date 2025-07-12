@@ -186,10 +186,11 @@ main{
     flex-wrap: wrap;
     background-color: chocolate;
     width:90%;
-    margin: auto;
+    margin: 1rem auto ;
     color:#432371;
-    gap: .9rem ;
-    padding: 0rem;
+    gap: .9rem ; 
+    padding: 1.5rem;
+    border-radius: 15px;   
 }
 #cards img{
     border-radius: 10px;
