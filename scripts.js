@@ -129,6 +129,6 @@ boton.addEventListener("click", function(event){
          let emailOrg = campoEmail(event);
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
-                 
+         limpiarCampos(event);          
          //cajaCarrito(event)
 });
