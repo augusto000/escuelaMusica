@@ -10,16 +10,14 @@ for(let i=2; i< 13; i++){
       else{
       let nuevoElement = document.createElement('img');
       nuevoElement.src = "media/"+`${i}`+".jpeg";
-  //    console.log(nuevoElement);
+      //console.log(nuevoElement);
       imgs.appendChild(nuevoElement);
       }
 }
-
 //apunto al boton
 let boton = document.getElementById('mibtn');
 //referenciio la caja flotante
 //let cajaCarrito = document.getElementById('cajaFlotante');
-
 function campoNombre(event){                        
                         //referencio para limpiar el inputText  
                        // let refInputText = document.getElementById('nombreOrg');
@@ -96,16 +94,16 @@ function campoNombre(event){
                         emailDst.textContent = emailOrg;
                         //copiar el valor desde observacionesDst
                         let observacionesDst = document.getElementById('observacionesDst');
-                        observacionesDst.textContent = observacionesOrg;
-                        //no recargar la pagina
-                        noRecargarPagina(event);
+                        observacionesDst.textContent = observacionesOrg;                        
                   }
                   else{
                         alert(`Atención: debe escribir todos sus datos.`);
                         //No recargar la página                        
                         noRecargarPagina(event);
-                        //limpiar el formulario
+                        //no recargar la pagina
+                        noRecargarPagina(event);
                         //limpiarCampos(event);
+                        limpiarCampos(event);
                   }                  
     }
     function campoEmail(){
