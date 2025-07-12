@@ -106,7 +106,7 @@ function campoNombre(event){
                         //No recargar la página                        
                         noRecargarPagina(event);
                         //limpiar el formulario
-                        limpiarCampos(event);
+                        //limpiarCampos(event);
                   }                  
     }
     function campoEmail(){
@@ -124,22 +124,7 @@ function campoNombre(event){
                         return observacionesOrg;
       }
       function limpiarCampos(event){
-                        formulario.reset();
-
-                        /*
-                        //referencio para limpiar el inputText nombreOrg  
-                        let refInputTextNom = document.getElementById('nombreOrg');
-                        refInputTextNom.value = " ";
-                        //referencio para limpiar el inputText apellidoOrt
-                        let refInputTextApe =document.getElementById('apellidoOrg');
-                        refInputTextApe.value = " ";
-                        //referencio para limpiar el inputText emailOrg
-                        let refInputTextEmail = document.getElementById('emailOrg');
-                        refInputTextEmail.value = " ";
-                        //referencio para limpiar el textArea de observacionesOrg
-                        let refInputObservacion = document.getElementById('observacionesOrg');
-                        refInputObservacion.value = " ";
-                        */
+                        formulario.reset();                        
     }
 boton.addEventListener("click", function(event){
          let nombreOrg = campoNombre(event);
@@ -147,8 +132,6 @@ boton.addEventListener("click", function(event){
          let emailOrg = campoEmail(event);
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
-         
-         //limpio el formulario
-         limpiarCampos(event);
+                 
          //cajaCarrito(event)
 });
