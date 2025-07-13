@@ -1,6 +1,6 @@
 
 *{
-    margin:0;
+    margin:auto;
     padding:0;
     box-sizing: border-box;    
 }
@@ -218,6 +218,7 @@ main{
     width: 100%;
      overflow-x:auto;
      border: 1px solid #ccc;
+     margin-top: .1rem;
 }
 table{
     white-space: nowrap;
@@ -247,7 +248,7 @@ th{
 form h2{
     color:#432371;
     text-align:right;
-    margin-left: 2.5rem;
+    margin-left: 2.7rem;
 }
 #contenedor-formulario form{
     display: flex;
@@ -284,4 +285,24 @@ form h2{
     z-index: 20000;
     opacity: .50;
     display: none;    
+}
+#container-footer-col-izq{
+    display: flex;
+    flex-direction: row;
+    max-width:33vw;
+    height: auto;        
+}
+#container-anio{
+    display: flex;
+    
+    border:1px solid black;
+    max-height: 30px;
+    
+}
+#anio{
+    font-size: clamp(10px, 15px, 12px);    
+}   
+#copy{
+    margin-left: .5rem;
+    font-size: clamp(10px, 15px, 12px);
 }
