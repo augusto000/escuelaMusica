@@ -46,20 +46,22 @@ body{min-width: 500px;
     list-style: none;
     margin:auto;
     padding-bottom: .8rem;
-    
-    background-color: orangered;    
+    background-color:#432371 ;    
 }
 li{
     min-height: 45px;
-    margin:auto;    
+    margin:auto; 
+     
 }
 li a{
+    
     text-decoration: none; 
-    font-size: 2rem;
-    color: #432371;   
+    font-size: 2.2rem;
+    color: white;
+       
 }
 a:hover{
-    color: white;
+    color: #432371;
     transition: 2s;
 }
 main{
@@ -97,7 +99,7 @@ main{
     margin: 1rem ;
 }
 .contenedor-div .centro{
-    width:15px;
+    width:20px;
     min-height: 100%;
     background-color: whitesmoke;      
 }
@@ -109,13 +111,13 @@ main{
     text-align:justify;
     text-indent: 4rem;
     line-height: 1.1rem;
-    padding:1rem ;
-    height: 300px;
+    padding:.3rem ;
+    height: -150px;
       
                
 }
 .derecha #texto-fila1{    
-   font-size: clamp(1.5vw, 3vw, 1vw);
+   font-size: clamp(1.5vw, 3vw, 2vw);
    vertical-align:middle;
    text-align: justify;   
    text-indent: 6vw; 
@@ -130,18 +132,18 @@ main{
     width:80%;
     max-width:610px;    
     
-    padding:1rem;
-    height: 350px;            
+    padding:.2rem;
+    height: 150px;            
 }   
 .derecha2 #texto-fila2{    
-    font-size: clamp(1.5vw, 3vw, 1vw);
+   font-size: clamp(1.5vw, 3vw, 2vw);
    text-align: justify;
    text-indent: 6vw; 
-   line-height: 3vw;
-    width: 100%;
-    height:45.5%;  
-    margin: auto; 
-    padding:1rem;    
+   line-height: 2.9vw;
+   width: 100%;
+   height: 180px;  
+   margin: auto; 
+   padding-top:2.4rem;    
 }
 .contenedor-div2{
     display: flex;
@@ -152,12 +154,12 @@ main{
     align-items: center;
     margin: auto ;
     padding-top: .3rem;
-    max-width: 79%;
+    max-width: 81%;
     height: 150px;
     background-color: orangered; 
 }
 .centro2{
-    width: 9px;
+    width: 7px;
     min-height: 100%;
     background-color: whitesmoke;
     border: 0px double orangered;    
@@ -289,20 +291,38 @@ form h2{
 #container-footer-col-izq{
     display: flex;
     flex-direction: row;
-    max-width:33vw;
-    height: auto;        
+    justify-content: space-evenly;
+    max-width:100vw;
+    height: 60px; 
+    background-color: #432371;    
 }
 #container-anio{
-    display: flex;
-    
-    border:1px solid black;
+    display: flex;    
     max-height: 30px;
-    
+    width: 39%;    
 }
-#anio{
-    font-size: clamp(10px, 15px, 12px);    
+#anio_{
+    font-size: clamp(10px, 15px, 15px);
+    padding-top: .5rem;    
 }   
 #copy{
     margin-left: .5rem;
-    font-size: clamp(10px, 15px, 12px);
+    font-size: clamp(10px, 15px, 15px);
+    padding-top: .5rem;
+}
+#container-autor{
+    display: flex;
+    justify-content: center;
+    align-items: c  enter;
+    width: 33% ;
+}
+#autor-title, #autor, #comi{
+    font-size: .8rem;
+    vertical-align: middle;
+    margin: auto;
+    padding-top:.6rem ;
+}
+#container-icons-media{
+    display: flex;
+    width: 33%;
 }
