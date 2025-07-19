@@ -288,41 +288,59 @@ form h2{
     opacity: .50;
     display: none;    
 }
-#container-footer-col-izq{
+footer{
+    height: 50px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    max-width:100vw;
-    height: 60px; 
-    background-color: #432371;    
+    justify-content: space-around;
+    background-color: #432371;
 }
-#container-anio{
-    display: flex;    
+#container-anio{ 
+    display: flex;
+    justify-content: center;       
     max-height: 30px;
-    width: 39%;    
+    width: 150px; 
+    
 }
-#anio_{
-    font-size: clamp(10px, 15px, 15px);
-    padding-top: .5rem;    
-}   
 #copy{
-    margin-left: .5rem;
-    font-size: clamp(10px, 15px, 15px);
-    padding-top: .5rem;
-}
+    margin-left: .2rem;
+    font-size: clamp(15px, 15px, 10px);
+    padding-top: .4rem;
+    color:white;
+    max-width: 12px;  
+}     
+#anio_{
+    font-size: clamp(14px, 15px, 10px);
+    padding-top: .4rem;
+    margin-left: -2rem;
+    width:40px;  
+}       
 #container-autor{
     display: flex;
     justify-content: center;
-    align-items: c  enter;
+    align-items: center;
     width: 33% ;
+    
 }
-#autor-title, #autor, #comi{
+#autor-title, #autor{
     font-size: .8rem;
+    color:wheat;
     vertical-align: middle;
     margin: auto;
     padding-top:.6rem ;
 }
-#container-icons-media{
+#container-icons-media {
     display: flex;
-    width: 33%;
+    margin-right: 3.5rem;
+    justify-content: space-around;
+    width: 150px ;    
+}
+#container-icons-media a i   {
+    background-color: white;       
+}
+#container-anio #comi{
+    font-size: clamp(14px, 15px, 10px);
+    color:white;
+    max-width: 55px;
+    padding-top:.4rem;
+    margin-left: -2rem;
 }

@@ -1,3 +1,8 @@
+let anio = new Date();
+let anioActual = anio.getFullYear();
+let anio_ = document.getElementById('anio_');
+anio_.textContent = anioActual;
+anio_.style.color="white";
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='CMú');
 
