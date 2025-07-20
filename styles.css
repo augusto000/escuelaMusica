@@ -266,7 +266,7 @@ form h2{
     margin: auto;
 }
 .itemForm{
-    margin: auto;
+    margin-left: -2.5rem;
     padding: .5rem;
     max-width: 28vh;
 }
