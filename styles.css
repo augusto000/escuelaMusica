@@ -1,6 +1,6 @@
 
 *{
-    margin:auto;
+    margin:0;
     padding:0;
     box-sizing: border-box;    
 }
@@ -45,20 +45,23 @@ body{min-width: 500px;
     max-height: 160px;
     list-style: none;
     margin:auto;
-    padding-bottom: .8rem;
+    padding-bottom: .1rem;
     background-color:#432371 ;    
 }
 li{
-    min-height: 45px;
+    min-height: 25px;
+    max-height: 45px;
     margin:auto; 
      
 }
 li a{
-    
+    vertical-align:middle;
+    font-size: clamp(15px, 17px, 16px);
     text-decoration: none; 
-    font-size: 2.2rem;
+    /*font-size: 2.2rem;*/
     color: white;
-       
+    padding-top: 45px ; 
+    margin: 0px;  
 }
 a:hover{
     color: #432371;
@@ -168,7 +171,7 @@ main{
     margin-top:1.5rem;
 }
 .contenedor-productos h2{
-    width: 65%;
+    width: 85%;
     background-color: chocolate;
     text-align: center;
     align-content: center;
@@ -288,6 +291,16 @@ form h2{
     opacity: .50;
     display: none;    
 }
+#resenias{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 99.8%;
+    height: 150px;
+    border:2px double white;
+    align-items: center;
+}
+
 footer{
     height: 50px;
     display: flex;
@@ -298,18 +311,17 @@ footer{
     display: flex;
     justify-content: center;       
     max-height: 30px;
-    width: 150px; 
-    
+    width: 150px;   
 }
 #copy{
     margin-left: .2rem;
-    font-size: clamp(15px, 15px, 10px);
+    font-size: clamp(11px, 15px, 7px);
     padding-top: .4rem;
     color:white;
     max-width: 12px;  
 }     
 #anio_{
-    font-size: clamp(14px, 15px, 10px);
+    font-size: clamp(11px, 15px, 7px);
     padding-top: .4rem;
     margin-left: -2rem;
     width:40px;  
@@ -318,27 +330,26 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 33% ;
-    
+    width: 33%;   
 }
 #autor-title, #autor{
-    font-size: .8rem;
+   font-size: clamp(10px, 10px, 10px);
     color:wheat;
     vertical-align: middle;
     margin: auto;
-    padding-top:.6rem ;
+    padding-top:.4rem ;
 }
 #container-icons-media {
     display: flex;
-    margin-right: 3.5rem;
-    justify-content: space-around;
+    margin-right: .1rem;
+    justify-content: right;
     width: 150px ;    
 }
 #container-icons-media a i   {
     background-color: white;       
 }
 #container-anio #comi{
-    font-size: clamp(14px, 15px, 10px);
+    font-size: clamp(11px, 10px, 10px);
     color:white;
     max-width: 55px;
     padding-top:.4rem;
