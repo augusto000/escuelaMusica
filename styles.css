@@ -11,10 +11,8 @@ html{
     font-weight: 500;
     font-style: normal;    
 }
-body{min-width: 500px;
-     flex-shrink:1;
-     flex-grow: 1;
-     flex-basis: 80%;
+body{min-width: 400px;
+     
 }
 .contenedor-img-practicando{
     
@@ -316,13 +314,13 @@ footer{
 #copy{
     margin-left: .2rem;
     font-size: clamp(11px, 15px, 7px);
-    padding-top: .4rem;
+    padding-top: 1.1rem;
     color:white;
     max-width: 12px;  
 }     
 #anio_{
     font-size: clamp(11px, 15px, 7px);
-    padding-top: .4rem;
+    padding-top: 1.1rem;
     margin-left: -2rem;
     width:40px;  
 }       
@@ -340,18 +338,22 @@ footer{
     padding-top:.4rem ;
 }
 #container-icons-media {
+    padding-top: .5rem;
     display: flex;
     margin-right: .1rem;
     justify-content: right;
     width: 150px ;    
 }
 #container-icons-media a i   {
-    background-color: white;       
+    background-color: white;
+    margin:.5rem;
+           
 }
 #container-anio #comi{
     font-size: clamp(11px, 10px, 10px);
     color:white;
     max-width: 55px;
-    padding-top:.4rem;
+    padding-top:1.1rem;
     margin-left: -2rem;
+    
 }
