@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/d514645d85.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -63,8 +64,8 @@
     </div>
     <div class="contenedor-productos"> <h2>Productos</h2></div>
       <div id="cards"> 
-         <div id="dos"></div>
-         <div id="tres"></div>             
+         <!--<div id="dos"></div>
+         <div id="tres"></div>-->             
             <!--
         <img src="media/2.jpeg" alt="">
              <img src="media/3.jpeg" alt="">
@@ -89,7 +90,7 @@
            </tr> 
          </thead>
         
-         <tbody>
+         <tbody id="element">
           <td id="nombreDst"></td>
           <td id="apeDst"></td>
           <!--<td>los prados 454</td>
@@ -105,7 +106,7 @@
 
     <!--Formulario-->
     <div id="contenedor-formulario">
-     <form action="https://formspree.io/f/xeoknnow" method="POST">        
+     <form action="https://formspree.io/f/xeoknnow" id="formulario" method="POST">        
           <h2>Suscribite :</h2>
         <div class="itemForm contenedor-item1-form">
             <label for="nombreOrg" name="nombreOrg">Nombre :
@@ -143,18 +144,34 @@
         </div>
         -->
         <div class="itemForm contenedor-item7-form">
-             <label for="observacionesOrg" name="observacionesOrg">Observaciones :</label>
+             <label for="observacionesOrg" >Observaciones :</label>
              <textarea name="observacionesOrg" id="observacionesOrg" rows="4" cols="21" placeholder="..escribe tu comentario y tu dirección completa" > </textarea>
         </div>       
        <button type="submit" id="mibtn"> Enviar </button>   
       </form>
-
-    </div>
-         <div>
-          
-         </div>
-    
-  </main>
+  </div>
+   
+  <section id="resenias">
+    <div id="contenedor-titulo-reseñas">
+    <h1>Reseñas</h1>
+  </div> 
+  </section>
+  <footer>
+            <div id="container-anio">
+               <span id="copy">&copy;</span>
+               <span id="anio_">2000</span>
+               <span id="comi">/ 25014</span>
+            </div>
+            <div id="container-autor">
+               <span id="autor">autor: Augusto Achá</span>
+            </div>   
+          <div id="container-icons-media">
+               <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+               <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>     
+          </div>        
+    </footer>   
+ </main>
     <script src="scripts.js"></script>
 </body>
 </html>
