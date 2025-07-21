@@ -1,3 +1,72 @@
+//Objeto literal que contiene los datos de la card
+const producto =[
+     {
+      Id:2,
+      titulo : "Iniciación en Guitarra 2025",
+      descriBoton:"Agregar",
+      precio:"$18900"      
+      } ,
+      {
+      Id:3,
+      titulo : "Calibración de Guitarra 2025",
+      descriBoton:"Agregar",
+      precio:"$19500"
+     },
+     {
+      Id:4,
+      titulo : "Curso Intensivo de Guitarra 2025",
+      descriBoton:"Agregar",
+      precio:"$26000"
+     },
+     {
+      Id:5,
+      titulo : "Cursos de Piano 2025",
+      descriBoton:"Agregar",
+      precio:"$20000"
+     },
+     {
+      Id:6,
+      titulo : "Cursos Avanzado de Guitarra 2025",
+      descriBoton:"Agregar",
+      precio:"$25000"
+     },
+     {
+      Id:7,
+      titulo : "Curso Avanzado de Piano 2025",
+      descriBoton:"Agregar",
+      precio:"$26900"
+     },
+     {
+      Id:8,
+      titulo : "Curso Intermedio de Guitarra 2025",
+      descriBoton:"Agregar",
+      precio:"$22000"
+     },
+     {
+      Id:9,
+      titulo : "Cursos de Introducción a los intrumentos 2025",
+      descriBoton:"Agregar",
+      precio:"$29000"
+     },
+     {
+      Id:10,
+      titulo : "Cursos de Guitarra Electrica 2025",
+      descriBoton:"Agregar",
+      precio:"$6300"      
+     },
+     {
+      Id:11,
+      titulo : "Cursos de Guitarra Flolclorica 2025",
+      descriBoton:"Agregar",
+      precio:"$30000"      
+     },
+     {
+      Id:12,
+      titulo : "Cursos de Guitarra Electrica Acústica 2025",
+      descriBoton:"Agregar",
+      precio:"$4200"      
+     }
+];
 let anio = new Date();
 let anioActual = anio.getFullYear();
 let anio_ = document.getElementById('anio_');
@@ -6,29 +75,56 @@ anio_.style.color="white";
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='CMú');
 
-let imgs = document.getElementById("cards");
-for(let i=2; i< 13; i++){
+/*Código de las cards */
+let cards = document.getElementById("cards");
+for(let i = 2; i < 11; i++){
+      
       //acomodar los tamañ0s  de esas fotos la 8 y la 12
       if ((i===8) || (i ===12)){
-            console.log();
+            console.log('');
       }
       else{
+            /***/
+            let cardContainer = document.createElement('div');
+            cards.appendChild(cardContainer);
+            /** */
       let nuevoElement = document.createElement('img');
       nuevoElement.src = "media/"+`${i}`+".jpeg";
+      nuevoElement.style.border="1px double white";
       //console.log(nuevoElement);
-      imgs.appendChild(nuevoElement);
-      }
+      /*cards.appendChild(nuevoElement);*/
+        cardContainer.appendChild(nuevoElement);
+        let nuevoP = document.createElement('p');
+        nuevoP.style.fontSize=".9rem";
+        cardContainer.style.textAlign="center";
+        nuevoP.style.fontFamily="Arial Black";
+        nuevoP.textContent=`${producto[i].titulo}`;
+        cardContainer.appendChild(nuevoP);
+        let nuevoP2 = document.createElement('p');
+        nuevoP2.textContent = `${producto[i].precio}`;
+        cardContainer.appendChild(nuevoP2);
+        let nuevoBoton = document.createElement('button');
+        nuevoBoton.textContent = `${producto[i].descriBoton}`;
+        nuevoBoton.style.width='75px';
+        cardContainer.appendChild(nuevoBoton);
+      }      
 }
-//apunto al boton
-let boton = document.getElementById('mibtn');
-//referenciio la caja flotante
-//let cajaCarrito = document.getElementById('cajaFlotante');
+function cajaCarrito(){
+                        //hago aparecer la caja del carrito
+                        let cajaFlotante = document.getElementById('cajaFlotante');
+                        cajaFlotante.style.display='flex';
+                        cajaFlotante.style.justifyContent='center';
+                        cajaFlotante.style.alignItems='top';
+                        cajaFlotante.style.flexWrap='wrap';
+}
+//referencio al boton del formulario
+let boton = document.getElementById('btnForm');
 function campoNombre(event){                        
                         //referencio para limpiar el inputText  
                        // let refInputText = document.getElementById('nombreOrg');
                         //Tomo el valor que contiene a travez de .value
                         let nombreOrg = document.getElementById('nombreOrg').value;
-                        return nombreOrg;
+                        //return nombreOrg;
                   //si esta vacía la cadena.
                   if(nombreOrg.trim() !== ''){                        
                         //apunto al campo destino
@@ -37,6 +133,7 @@ function campoNombre(event){
                         //refInputText.value = " ";
                         //que no recargue la página
                         //event.preventDefault();
+                        return nombreOrg;
                         noRecargarPagina(event);                        
                   }  
                   else{
@@ -75,15 +172,7 @@ function campoNombre(event){
     }
     function noRecargarPagina(event){
           event.preventDefault();
-    }
-    function cajaCarrito(){
-                        //hago aparecer la caja del carrito
-                        let cajaFlotante = document.getElementById('cajaFlotante');
-                        cajaFlotante.style.display='flex';
-                        cajaFlotante.style.justifyContent='center';
-                        cajaFlotante.style.alignItems='top';
-                        cajaFlotante.style.flexWrap='wrap';
-    }    
+    }        
     function verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg){
                         //si esta vacía la cadena.
                   if(nombreOrg.trim() !== '' && apellidoOrg.trim() !== '' && emailOrg.trim() !== '' && observacionesOrg.trim() !== ''){                        
@@ -103,8 +192,6 @@ function campoNombre(event){
                   }
                   else{
                         alert(`Atención: debe escribir todos sus datos.`);
-                        //No recargar la página                        
-                        noRecargarPagina(event);
                         //no recargar la pagina
                         noRecargarPagina(event);
                         //limpiarCampos(event);
@@ -128,12 +215,13 @@ function campoNombre(event){
       function limpiarCampos(event){
                         formulario.reset();                        
     }
+/**Boton del Formulario */    
 boton.addEventListener("click", function(event){
+         /*Verifico los datos en los campos ingresador*/
          let nombreOrg = campoNombre(event);
          let apellidoOrg = campoApellido(event);
          let emailOrg = campoEmail(event);
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
-         limpiarCampos(event);          
-         //cajaCarrito(event)
+         //limpiarCampos(event);       
 });
