@@ -250,7 +250,7 @@ th{
     justify-content: center;
     align-items: center;
     align-content: center;
-    border: 2px outset black;
+    /*border: 2px outset black;*/
     max-width: 62vw;
     height: auto;
     margin: auto;
