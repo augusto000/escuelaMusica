@@ -271,6 +271,7 @@ form h2{
 }
 /*caja de selección del carrito flotante y traslucida*/
 #cajaFlotante{
+    display: none;
     width: 250px;
     height: 300px;
     border: 0px solid blue;
@@ -281,8 +282,7 @@ form h2{
     bottom:auto;
     right:0rem;
     z-index: 20000;
-    opacity: .50;
-    display: none;    
+    opacity: .50;        
 }
 #resenias{
     display: flex;

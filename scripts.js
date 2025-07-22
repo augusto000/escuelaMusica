@@ -130,23 +130,41 @@ function cajaCarrito(){
                         cajaFlotante.style.display='flex';
                         cajaFlotante.style.justifyContent='center';
                         cajaFlotante.style.alignItems='top';
-                        cajaFlotante.style.flexWrap='wrap';
+                        //cajaFlotante.style.flexWrap='wrap';
 }
+function carritoFormato(){
+     let divPrincipal = document.createElement('div');
+     divPrincipal.style.display="flex";
+     divPrincipal.style.justifyContent="flex-start";
+     //divPrincipal.style.alignItems="center";
+     divPrincipal.style.margin="auto";
+     divPrincipal.style.maxWidth="100%";
+     divPrincipal.style.height="auto";
+     divPrincipal.style.backgroundColor="green";
+     divPrincipal.textContent="cant";
+     return divPrincipal;    
+}
+/**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
+let cajaFlotante = document.getElementById('cajaFlotante');
+/*referenciar la caja del carrito donde se insertarán los items*/
 let btnsCarrito = document.querySelectorAll('.btnCarrito');
-console.log(btnsCarrito);
 btnsCarrito.forEach((boton)=>{
     boton.addEventListener('click',function(){
            /**Comentario: al usar dataset,formatea el output a camelcase por eso
             * buscarlo como "camelcase : productoNro"*/
            console.log('Se hizo click en el boton :', this.dataset.productoNro);
            let prodClickeado = this.dataset.productoNro;
-           console.log('producto clickeado: '+ prodClickeado);
-           alert(prodClickeado);
+           
            /*********mostrar la caja donde se cargaron los productos del carrito***************/
            /*********************************************************************************** */
-           cajaCarrito()
+           cajaCarrito() ;
+           
+            let div_ = carritoFormato();
+            cajaFlotante.appendChild(div_);
+            console.log(cajaFlotante);          
     });
 });
+ 
 //referencio al boton del formulario
 let boton = document.getElementById('btnForm');
 function campoNombre(event){                        
