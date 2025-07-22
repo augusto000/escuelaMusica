@@ -141,7 +141,8 @@ btnsCarrito.forEach((boton)=>{
            console.log('Se hizo click en el boton :', this.dataset.productoNro);
            let prodClickeado = this.dataset.productoNro;
            prompt(prodClickeado);
-           /*mostrar la caja donde se cargaron los productos del carrito*/
+           /*********mostrar la caja donde se cargaron los productos del carrito***************/
+           /*********************************************************************************** */
            cajaCarrito()
     });
 });
@@ -251,5 +252,5 @@ boton.addEventListener("click", function(event){
          let emailOrg = campoEmail(event);
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
-         //limpiarCampos(event);       
+         limpiarCampos(event);       
 });
