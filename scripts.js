@@ -117,7 +117,7 @@ for(let i = 2; i < 11; i++){
         cardContainer.appendChild(nuevoP2);
         let nuevoBoton = document.createElement('button');
         nuevoBoton.textContent = `${producto[i].descriBoton}`;
-        nuevoBoton.setAttribute('id', 'btnCarrito}');
+        nuevoBoton.setAttribute('id', 'btnCarrito');
         nuevoBoton.style.width='75px';
         cardContainer.appendChild(nuevoBoton);
       }      
@@ -130,7 +130,7 @@ function cajaCarrito(){
                         cajaFlotante.style.alignItems='top';
                         cajaFlotante.style.flexWrap='wrap';
 }
-let btnCarrito = document.getElementById('btnCarrito');
+let btnCarrito = document.querySelectorAll('btnCarrito');
 btnCarrito.addEventListener('click',function(){
       cajaCarrito();
 });
