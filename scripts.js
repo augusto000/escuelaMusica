@@ -2,21 +2,21 @@
 const producto =[
      {
       Id:2,
-      titulo : "Iniciación en Guitarra 2025",
+      titulo : "Iniciación Guitarra 2025",
       btnCarrito:2,
       descriBoton:"Agregar",
       precio:"$18900"      
       } ,
       {
       Id:3,
-      titulo : "Calibración de Guitarra 2025",
+      titulo : "Calibración Guitarra 2025",
       btnCarrito:3,
       descriBoton:"Agregar",
       precio:"$19500"
      },
      {
       Id:4,
-      titulo : "Intensivo de Guitarra 2025",
+      titulo : "Intensivo Guitarra 2025",
       btnCarrito:4,
       descriBoton:"Agregar",
       precio:"$26000"
@@ -30,28 +30,28 @@ const producto =[
      },
      {
       Id:6,
-      titulo : "Avanzado de Guitarra 2025",
+      titulo : "Avanzado Guitarra 2025",
       btnCarrito:6,
       descriBoton:"Agregar",
       precio:"$25000"
      },
      {
       Id:7,
-      titulo : "Avanzado de Piano 2025",
+      titulo : "Avanzado Piano 2025",
       btnCarrito:7,
       descriBoton:"Agregar",
       precio:"$26900"
      },
      {
       Id:8,
-      titulo : "Intermedio de Guitarra 2025",
+      titulo : "Intermedio Guitarra 2025",
       btnCarrito:8,
       descriBoton:"Agregar",
       precio:"$22000"
      },
      {
       Id:9,
-      titulo : "Introducción a los intrumentos 2025",
+      titulo : "Introducción intrumentos 2025",
       btnCarrito:9,
       descriBoton:"Agregar",
       precio:"$29000"
