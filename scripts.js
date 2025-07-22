@@ -3,66 +3,77 @@ const producto =[
      {
       Id:2,
       titulo : "Iniciación en Guitarra 2025",
+      btnCarrito:2,
       descriBoton:"Agregar",
       precio:"$18900"      
       } ,
       {
       Id:3,
       titulo : "Calibración de Guitarra 2025",
+      btnCarrito:3,
       descriBoton:"Agregar",
       precio:"$19500"
      },
      {
       Id:4,
-      titulo : "Curso Intensivo de Guitarra 2025",
+      titulo : "Intensivo de Guitarra 2025",
+      btnCarrito:4,
       descriBoton:"Agregar",
       precio:"$26000"
      },
      {
       Id:5,
-      titulo : "Cursos de Piano 2025",
+      titulo : "Piano 2025",
+      btnCarrito:5,
       descriBoton:"Agregar",
       precio:"$20000"
      },
      {
       Id:6,
-      titulo : "Cursos Avanzado de Guitarra 2025",
+      titulo : "Avanzado de Guitarra 2025",
+      btnCarrito:6,
       descriBoton:"Agregar",
       precio:"$25000"
      },
      {
       Id:7,
-      titulo : "Curso Avanzado de Piano 2025",
+      titulo : "Avanzado de Piano 2025",
+      btnCarrito:7,
       descriBoton:"Agregar",
       precio:"$26900"
      },
      {
       Id:8,
-      titulo : "Curso Intermedio de Guitarra 2025",
+      titulo : "Intermedio de Guitarra 2025",
+      btnCarrito:8,
       descriBoton:"Agregar",
       precio:"$22000"
      },
      {
       Id:9,
-      titulo : "Cursos de Introducción a los intrumentos 2025",
+      titulo : "Introducción a los intrumentos 2025",
+      btnCarrito:9,
       descriBoton:"Agregar",
       precio:"$29000"
      },
      {
       Id:10,
-      titulo : "Cursos de Guitarra Electrica 2025",
+      titulo : "Guitarra Electrica 2025",
+      btnCarrito:10,
       descriBoton:"Agregar",
       precio:"$6300"      
      },
      {
       Id:11,
-      titulo : "Cursos de Guitarra Flolclorica 2025",
+      titulo : "Guitarra Flolclorica 2025",
+      btnCarrito:11,
       descriBoton:"Agregar",
       precio:"$30000"      
      },
      {
       Id:12,
-      titulo : "Cursos de Guitarra Electrica Acústica 2025",
+      titulo : "Guitarra Acústica 2025",
+      btnCarrito:12,
       descriBoton:"Agregar",
       precio:"$4200"      
      }
@@ -74,6 +85,8 @@ anio_.textContent = anioActual;
 anio_.style.color="white";
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='CMú');
+
+
 
 /*Código de las cards */
 let cards = document.getElementById("cards");
@@ -91,7 +104,6 @@ for(let i = 2; i < 11; i++){
       let nuevoElement = document.createElement('img');
       nuevoElement.src = "media/"+`${i}`+".jpeg";
       nuevoElement.style.border="1px double white";
-      //console.log(nuevoElement);
       /*cards.appendChild(nuevoElement);*/
         cardContainer.appendChild(nuevoElement);
         let nuevoP = document.createElement('p');
@@ -105,6 +117,7 @@ for(let i = 2; i < 11; i++){
         cardContainer.appendChild(nuevoP2);
         let nuevoBoton = document.createElement('button');
         nuevoBoton.textContent = `${producto[i].descriBoton}`;
+        nuevoBoton.setAttribute('id', 'btnCarrito}');
         nuevoBoton.style.width='75px';
         cardContainer.appendChild(nuevoBoton);
       }      
@@ -117,6 +130,10 @@ function cajaCarrito(){
                         cajaFlotante.style.alignItems='top';
                         cajaFlotante.style.flexWrap='wrap';
 }
+let btnCarrito = document.getElementById('btnCarrito');
+btnCarrito.addEventListener('click',function(){
+      cajaCarrito();
+});
 //referencio al boton del formulario
 let boton = document.getElementById('btnForm');
 function campoNombre(event){                        
