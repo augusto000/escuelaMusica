@@ -86,8 +86,6 @@ anio_.style.color="white";
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='CMú');
 
-
-
 /*Código de las cards */
 let cards = document.getElementById("cards");
 for(let i = 2; i < 11; i++){
@@ -104,7 +102,7 @@ for(let i = 2; i < 11; i++){
       let nuevoElement = document.createElement('img');
       nuevoElement.src = "media/"+`${i}`+".jpeg";
       nuevoElement.style.border="1px double white";
-      /*cards.appendChild(nuevoElement);*/
+      /*Ingresar el estilo border a nuevoElement;*/
         cardContainer.appendChild(nuevoElement);
         let nuevoP = document.createElement('p');
         nuevoP.style.fontSize=".9rem";
@@ -113,11 +111,15 @@ for(let i = 2; i < 11; i++){
         nuevoP.textContent=`${producto[i].titulo}`;
         cardContainer.appendChild(nuevoP);
         let nuevoP2 = document.createElement('p');
+        /**Ingresar el precio en el parrafo nuevoP2 */
         nuevoP2.textContent = `${producto[i].precio}`;
         cardContainer.appendChild(nuevoP2);
         let nuevoBoton = document.createElement('button');
         nuevoBoton.textContent = `${producto[i].descriBoton}`;
-        nuevoBoton.setAttribute('id', 'btnCarrito');
+        /**Ingresar una clase al boton 'agregar' */
+        nuevoBoton.classList.add('btnCarrito');
+        /**Adicionar un atributo para encontrar el boton que hizo click */ 
+        nuevoBoton.setAttribute("data-producto-nro", i);       
         nuevoBoton.style.width='75px';
         cardContainer.appendChild(nuevoBoton);
       }      
@@ -130,9 +132,18 @@ function cajaCarrito(){
                         cajaFlotante.style.alignItems='top';
                         cajaFlotante.style.flexWrap='wrap';
 }
-let btnCarrito = document.querySelectorAll('btnCarrito');
-btnCarrito.addEventListener('click',function(){
-      cajaCarrito();
+let btnsCarrito = document.querySelectorAll('.btnCarrito');
+console.log(btnsCarrito);
+btnsCarrito.forEach((boton)=>{
+    boton.addEventListener('click',function(){
+           /**Comentario: al usar dataset,formatea el output a camelcase por eso
+            * buscarlo como "camelcase : productoNro"*/
+           console.log('Se hizo click en el boton :', this.dataset.productoNro);
+           let prodClickeado = this.dataset.productoNro;
+           prompt(prodClickeado);
+           /*mostrar la caja donde se cargaron los productos del carrito*/
+           cajaCarrito()
+    });
 });
 //referencio al boton del formulario
 let boton = document.getElementById('btnForm');
