@@ -152,13 +152,12 @@ btnsCarrito.forEach((boton)=>{
     boton.addEventListener('click',function(){
            /**Comentario: al usar dataset,formatea el output a camelcase por eso
             * buscarlo como "camelcase : productoNro"*/
-           console.log('Se hizo click en el boton :', this.dataset.productoNro);
+           //console.log('Se hizo click en el boton :', this.dataset.productoNro);
            let prodClickeado = this.dataset.productoNro;
            
            /*********mostrar la caja donde se cargaron los productos del carrito***************/
            /*********************************************************************************** */
-           cajaCarrito() ;
-           
+            cajaCarrito() ;           
             let div_ = carritoFormato();
             cajaFlotante.appendChild(div_);
             console.log(cajaFlotante);          
