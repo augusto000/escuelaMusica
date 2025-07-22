@@ -111,8 +111,7 @@ main{
     text-indent: 4rem;
     line-height: 1.1rem;
     padding:.3rem ;
-    height: -150px;      
-               
+    height: -150px;                 
 }
 .derecha #texto-fila1{    
    font-size: clamp(1.5vw, 3vw, 2vw);
@@ -202,8 +201,7 @@ main{
     height: 30px;
     font-size: clamp(14px, 2rem, 24px);
     align-items: center;
-    text-align: center;  
-    
+    text-align: center;   
 }
 /*TABLA*/
 .tabla-tus-datos{
@@ -273,7 +271,7 @@ form h2{
 }
 /*caja de selección del carrito flotante y traslucida*/
 #cajaFlotante{
-    width: 300px;
+    width: 250px;
     height: 300px;
     border: 0px solid blue;
     margin: auto;
