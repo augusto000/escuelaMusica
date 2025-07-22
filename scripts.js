@@ -140,7 +140,8 @@ btnsCarrito.forEach((boton)=>{
             * buscarlo como "camelcase : productoNro"*/
            console.log('Se hizo click en el boton :', this.dataset.productoNro);
            let prodClickeado = this.dataset.productoNro;
-           alert('Producto clickeado: ',prodClickeado);
+           console.log('producto clickeado: '+ prodClickeado);
+           alert(prodClickeado);
            /*********mostrar la caja donde se cargaron los productos del carrito***************/
            /*********************************************************************************** */
            cajaCarrito()
