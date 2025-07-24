@@ -12,11 +12,10 @@ html{
     font-style: normal;
         
 }
-body{min-width: 400px;
-     
+body{
+    min-width: 400px;
 }
-.contenedor-img-practicando{
-    
+.contenedor-img-practicando{    
     width: 78.9%;
     margin: 0 auto;
     
@@ -51,8 +50,7 @@ body{min-width: 400px;
 li{
     min-height: 25px;
     max-height: 45px;
-    margin:auto; 
-     
+    margin:auto;      
 }
 li a{
     vertical-align:middle;
@@ -115,9 +113,7 @@ main{
     text-indent: 4rem;
     line-height: 1.1rem;
     padding:.3rem ;
-    height: -150px;
-      
-               
+    height: -150px;                 
 }
 .derecha #texto-fila1{    
    font-size: clamp(1.5vw, 3vw, 2vw);
@@ -207,8 +203,7 @@ main{
     height: 30px;
     font-size: clamp(14px, 2rem, 24px);
     align-items: center;
-    text-align: center;  
-    
+    text-align: center;   
 }
 /*TABLA*/
 .tabla-tus-datos{
@@ -262,7 +257,7 @@ form h2{
     justify-content: center;
     align-items: center;
     align-content: center;
-    border: 2px outset black;
+    /*border: 2px outset black;*/
     max-width: 62vw;
     height: auto;
     margin: auto;
@@ -278,7 +273,8 @@ form h2{
 }
 /*caja de selección del carrito flotante y traslucida*/
 #cajaFlotante{
-    width: 300px;
+    display: none;
+    width: 250px;
     height: 300px;
     border: 0px solid blue;
     margin: auto;
@@ -288,8 +284,7 @@ form h2{
     bottom:auto;
     right:0rem;
     z-index: 20000;
-    opacity: .50;
-    display: none;    
+    opacity: .50;        
 }
 #resenias{
     display: flex;

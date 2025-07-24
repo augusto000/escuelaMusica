@@ -1,3 +1,83 @@
+//Objeto literal que contiene los datos de la card
+const producto =[
+     {
+      Id:2,
+      titulo : "Iniciación Guitarra 2025",
+      btnCarrito:2,
+      descriBoton:"Agregar",
+      precio:"$18900"      
+      } ,
+      {
+      Id:3,
+      titulo : "Calibración Guitarra 2025",
+      btnCarrito:3,
+      descriBoton:"Agregar",
+      precio:"$19500"
+     },
+     {
+      Id:4,
+      titulo : "Intensivo Guitarra 2025",
+      btnCarrito:4,
+      descriBoton:"Agregar",
+      precio:"$26000"
+     },
+     {
+      Id:5,
+      titulo : "Piano 2025",
+      btnCarrito:5,
+      descriBoton:"Agregar",
+      precio:"$20000"
+     },
+     {
+      Id:6,
+      titulo : "Avanzado Guitarra 2025",
+      btnCarrito:6,
+      descriBoton:"Agregar",
+      precio:"$25000"
+     },
+     {
+      Id:7,
+      titulo : "Avanzado Piano 2025",
+      btnCarrito:7,
+      descriBoton:"Agregar",
+      precio:"$26900"
+     },
+     {
+      Id:8,
+      titulo : "Intermedio Guitarra 2025",
+      btnCarrito:8,
+      descriBoton:"Agregar",
+      precio:"$22000"
+     },
+     {
+      Id:9,
+      titulo : "Introducción intrumentos 2025",
+      btnCarrito:9,
+      descriBoton:"Agregar",
+      precio:"$29000"
+     },
+     {
+      Id:10,
+      titulo : "Guitarra Electrica 2025",
+      btnCarrito:10,
+      descriBoton:"Agregar",
+      precio:"$6300"      
+     },
+     {
+      Id:11,
+      titulo : "Guitarra Flolclorica 2025",
+      btnCarrito:11,
+      descriBoton:"Agregar",
+      precio:"$30000"      
+     },
+     {
+      Id:12,
+      titulo : "Guitarra Acústica 2025",
+      btnCarrito:12,
+      descriBoton:"Agregar",
+      precio:"$4200"      
+     }
+];
 let anio = new Date();
 let anioActual = anio.getFullYear();
 let anio_ = document.getElementById('anio_');
@@ -6,29 +86,92 @@ anio_.style.color="white";
 let titulo = document.getElementsByTagName('title');
 console.log(titulo[0].textContent='CMú');
 
-let imgs = document.getElementById("cards");
-for(let i=2; i< 13; i++){
+/*Código de las cards */
+let cards = document.getElementById("cards");
+for(let i = 2; i < 11; i++){
+      
       //acomodar los tamañ0s  de esas fotos la 8 y la 12
       if ((i===8) || (i ===12)){
-            console.log();
+            console.log('');
       }
       else{
+            /***/
+            let cardContainer = document.createElement('div');
+            cards.appendChild(cardContainer);
+            /** */
       let nuevoElement = document.createElement('img');
       nuevoElement.src = "media/"+`${i}`+".jpeg";
-      //console.log(nuevoElement);
-      imgs.appendChild(nuevoElement);
-      }
+      nuevoElement.style.border="1px double white";
+      /*Ingresar el estilo border a nuevoElement;*/
+        cardContainer.appendChild(nuevoElement);
+        let nuevoP = document.createElement('p');
+        nuevoP.style.fontSize=".9rem";
+        cardContainer.style.textAlign="center";
+        nuevoP.style.fontFamily="Arial Black";
+        nuevoP.textContent=`${producto[i].titulo}`;
+        cardContainer.appendChild(nuevoP);
+        let nuevoP2 = document.createElement('p');
+        /**Ingresar el precio en el parrafo nuevoP2 */
+        nuevoP2.textContent = `${producto[i].precio}`;
+        cardContainer.appendChild(nuevoP2);
+        let nuevoBoton = document.createElement('button');
+        nuevoBoton.textContent = `${producto[i].descriBoton}`;
+        /**Ingresar una clase al boton 'agregar' */
+        nuevoBoton.classList.add('btnCarrito');
+        /**Adicionar un atributo para encontrar el boton que hizo click */ 
+        nuevoBoton.setAttribute("data-producto-nro", i);       
+        nuevoBoton.style.width='75px';
+        cardContainer.appendChild(nuevoBoton);
+      }      
 }
-//apunto al boton
-let boton = document.getElementById('mibtn');
-//referenciio la caja flotante
-//let cajaCarrito = document.getElementById('cajaFlotante');
+function cajaCarrito(){
+                        //hago aparecer la caja del carrito
+                        let cajaFlotante = document.getElementById('cajaFlotante');
+                        cajaFlotante.style.display='flex';
+                        cajaFlotante.style.justifyContent='center';
+                        cajaFlotante.style.alignItems='top';
+                        //cajaFlotante.style.flexWrap='wrap';
+}
+function carritoFormato(){
+     let divPrincipal = document.createElement('div');
+     divPrincipal.style.display="flex";
+     divPrincipal.style.justifyContent="flex-start";
+     //divPrincipal.style.alignItems="center";
+     divPrincipal.style.margin="auto";
+     divPrincipal.style.maxWidth="100%";
+     divPrincipal.style.height="auto";
+     divPrincipal.style.backgroundColor="green";
+     divPrincipal.textContent="cant";
+     return divPrincipal;    
+}
+/**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
+let cajaFlotante = document.getElementById('cajaFlotante');
+/*referenciar la caja del carrito donde se insertarán los items*/
+let btnsCarrito = document.querySelectorAll('.btnCarrito');
+btnsCarrito.forEach((boton)=>{
+    boton.addEventListener('click',function(){
+           /**Comentario: al usar dataset,formatea el output a camelcase por eso
+            * buscarlo como "camelcase : productoNro"*/
+           //console.log('Se hizo click en el boton :', this.dataset.productoNro);
+           let prodClickeado = this.dataset.productoNro;
+           
+           /*********mostrar la caja donde se cargaron los productos del carrito***************/
+           /*********************************************************************************** */
+            cajaCarrito() ;           
+            let div_ = carritoFormato();
+            cajaFlotante.appendChild(div_);
+            console.log(cajaFlotante);          
+    });
+});
+ 
+//referencio al boton del formulario
+let boton = document.getElementById('btnForm');
 function campoNombre(event){                        
                         //referencio para limpiar el inputText  
                        // let refInputText = document.getElementById('nombreOrg');
                         //Tomo el valor que contiene a travez de .value
                         let nombreOrg = document.getElementById('nombreOrg').value;
-                        return nombreOrg;
+                        //return nombreOrg;
                   //si esta vacía la cadena.
                   if(nombreOrg.trim() !== ''){                        
                         //apunto al campo destino
@@ -37,6 +180,7 @@ function campoNombre(event){
                         //refInputText.value = " ";
                         //que no recargue la página
                         //event.preventDefault();
+                        return nombreOrg;
                         noRecargarPagina(event);                        
                   }  
                   else{
@@ -75,15 +219,7 @@ function campoNombre(event){
     }
     function noRecargarPagina(event){
           event.preventDefault();
-    }
-    function cajaCarrito(){
-                        //hago aparecer la caja del carrito
-                        let cajaFlotante = document.getElementById('cajaFlotante');
-                        cajaFlotante.style.display='flex';
-                        cajaFlotante.style.justifyContent='center';
-                        cajaFlotante.style.alignItems='top';
-                        cajaFlotante.style.flexWrap='wrap';
-    }    
+    }        
     function verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg){
                         //si esta vacía la cadena.
                   if(nombreOrg.trim() !== '' && apellidoOrg.trim() !== '' && emailOrg.trim() !== '' && observacionesOrg.trim() !== ''){                        
@@ -103,8 +239,6 @@ function campoNombre(event){
                   }
                   else{
                         alert(`Atención: debe escribir todos sus datos.`);
-                        //No recargar la página                        
-                        noRecargarPagina(event);
                         //no recargar la pagina
                         noRecargarPagina(event);
                         //limpiarCampos(event);
@@ -128,27 +262,13 @@ function campoNombre(event){
       function limpiarCampos(event){
                         formulario.reset();                        
     }
+/**Boton del Formulario */    
 boton.addEventListener("click", function(event){
+         /*Verifico los datos en los campos ingresador*/
          let nombreOrg = campoNombre(event);
          let apellidoOrg = campoApellido(event);
          let emailOrg = campoEmail(event);
          let observacionesOrg = campoObservacion(event);
          verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
-         limpiarCampos(event);          
-         //cajaCarrito(event)
+         limpiarCampos(event);       
 });
-
-let n=5;
-let resultado=1;
-let i=1;
- while (i<=n){
-      resultado = resultado*i;
-      i=i+1;
- }
- prompt(resultado);
-
- let var1=2;
- let var2 =3;
- var2 =4;
- var1=5;
- prompt(var1*var2);
