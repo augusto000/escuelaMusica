@@ -1,7 +1,13 @@
 //Objeto literal que contiene los datos de la card
 const producto =[
      {
-      Id:2,
+      Id:1,
+      titulo : "Iniciación Guitarra 2025",
+      btnCarrito:2,
+      descriBoton:"Agregar",
+      precio:"$18900"      
+      } ,
+      {Id:2,
       titulo : "Iniciación Guitarra 2025",
       btnCarrito:2,
       descriBoton:"Agregar",
@@ -48,8 +54,7 @@ const producto =[
       btnCarrito:7,
       descriBoton:"Agregar",
       precio:"$26900"
-     },
-     
+     },     
      {
       Id:9,
       titulo : "Introducción intrumentos 2025",
@@ -73,10 +78,17 @@ const producto =[
      },
      {
       Id:12,
-      titulo : "Guitarra AcústicaUL 2025",
+      titulo : "Guitarra AcústicaEX 2025",
       btnCarrito:12,
       descriBoton:"Agregar",
       precio:"$4200"      
+     },
+     {
+      Id:13,
+      titulo : "Guitarra AcústicaUL 2025",
+      btnCarrito:13,
+      descriBoton:"Agregar",
+      precio:"$4205"      
      }
 ];
 let items =[{
@@ -96,10 +108,10 @@ console.log(titulo[0].textContent='CMú');
 
 /*Código de las cards */
 let cards = document.getElementById("cards");
-for(let i = 2; i < 11; i++){
+for(let i = 1; i <= 12; i++){
       
       //acomodar los tamañ0s  de esas fotos la 8 y la 12
-      if ((i===8) || (i ===12)){
+      if ((i===-1) || (i ===-1)){
             console.log('');
       }
       else{
@@ -139,16 +151,7 @@ function cajaCarrito(){
                         //cajaFlotante.style.flexWrap='wrap';
 }
 function carritoFormato(){
-     let divPrincipal = document.createElement('div');
-     divPrincipal.style.display="flex";
-     divPrincipal.style.justifyContent="flex-start";
-     //divPrincipal.style.alignItems="center";
-     divPrincipal.style.margin="auto";
-     divPrincipal.style.maxWidth="100%";
-     divPrincipal.style.height="auto";
-     divPrincipal.style.backgroundColor="green";
-     divPrincipal.textContent="cant";
-     return divPrincipal;    
+        
 }
 /**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
 let cajaFlotante = document.getElementById('cajaFlotante');
@@ -160,10 +163,13 @@ btnsCarrito.forEach((boton)=>{
             * buscarlo como "camelcase : productoNro"*/
            //console.log('Se hizo click en el boton :', this.dataset.productoNro);
            let prodClickeado = this.dataset.productoNro;
-           
-           /*********mostrar la caja donde se cargaron los productos del carrito***************/
-           /*********************************************************************************** */
-            cajaCarrito() ;           
+           let objMostrar = producto[prodClickeado].titulo;
+           let identificar = producto[prodClickeado-1].Id;
+           alert(prodClickeado);
+           alert(objMostrar);
+           prompt(identificar);
+
+             cajaCarrito() ;           
             //let div_ = carritoFormato();
            // cajaFlotante.appendChild(div_);
                       
