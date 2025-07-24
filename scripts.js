@@ -162,13 +162,15 @@ btnsCarrito.forEach((boton)=>{
            /**Comentario: al usar dataset,formatea el output a camelcase por eso
             * buscarlo como "camelcase : productoNro"*/
            //console.log('Se hizo click en el boton :', this.dataset.productoNro);
+           let acumuladorCantidad =0;
+           //prodClickeado toma el boton escogido.
            let prodClickeado = this.dataset.productoNro;
-           let objMostrar = producto[prodClickeado].titulo;
+           let titulo = producto[prodClickeado].titulo;
            let identificar = producto[prodClickeado-1].Id;
-           alert(prodClickeado);
-           alert(objMostrar);
-           prompt(identificar);
-
+           let preci = producto[prodClickeado].precio;
+           let cant = acumuladorCantidad+1;
+           alert(cant+" " + titulo+" " + preci);
+           
              cajaCarrito() ;           
             //let div_ = carritoFormato();
            // cajaFlotante.appendChild(div_);
