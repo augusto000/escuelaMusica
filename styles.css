@@ -286,6 +286,13 @@ form h2{
     z-index: 20000;
     opacity: 1;        
 }
+.pie-cajaFlotante{
+    position: relative;
+    top: 210px;
+    max-width: 100%;
+    height: 30px;
+    background-color: blueviolet;
+}
 #cajaFlotante h1{
     width: 100%;
     height: 30px;
