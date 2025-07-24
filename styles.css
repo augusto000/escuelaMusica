@@ -9,14 +9,16 @@ html{
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;    
+    font-style: normal;
+        
 }
 body{
     min-width: 400px;
 }
 .contenedor-img-practicando{    
     width: 78.9%;
-    margin: 0 auto;  
+    margin: 0 auto;
+    
 }
 /*efecto al contenedor de la imagen*/
 .contenedor-img-practicando:hover img{
@@ -270,20 +272,59 @@ form h2{
     resize: none;
 }
 /*caja de selección del carrito flotante y traslucida*/
-#cajaFlotante{
-    display: none;
+#cajaFlotante {
+    display: inline-block;
     width: 250px;
     height: 300px;
     border: 0px solid blue;
     margin: auto;
-    padding: 10px;
+    padding: 1px;
     background-color: lightcoral;
     position:fixed;
     bottom:auto;
     right:0rem;
     z-index: 20000;
-    opacity: .50;        
+    opacity: 1;        
 }
+.pie-cajaFlotante{
+    position: relative;
+    top: 210px;
+    max-width: 100%;
+    height: 30px;
+    background-color: blueviolet;
+}
+#cajaFlotante h1{
+    width: 100%;
+    height: 30px;
+    background-color: cadetblue;
+    text-align: center;
+}
+#encabezado{
+    display: flex;
+    width: 100%;
+    justify-content: space-around; 
+}
+#encabezado .cant{       
+    align-content: center;
+    font-size: .8rem;
+    border: 1px solid;
+    max-width: 33px;
+}
+#encabezado .desc{       
+    align-content: center;
+    font-size: .8rem;
+    border: 1px solid;
+    max-width: 176px;
+}
+#encabezado .precio{       
+    align-content: center;
+    font-size: .8rem;
+    border: 1px solid;
+    max-width: 46px;
+    margin-right:0px;
+}
+
+
 #resenias{
     display: flex;
     flex-direction: row;

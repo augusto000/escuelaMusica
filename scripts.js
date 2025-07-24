@@ -135,9 +135,7 @@ for(let i = 2; i < 11; i++){
 function cajaCarrito(){
                         //hago aparecer la caja del carrito
                         let cajaFlotante = document.getElementById('cajaFlotante');
-                        cajaFlotante.style.display='flex';
-                        cajaFlotante.style.justifyContent='center';
-                        cajaFlotante.style.alignItems='top';
+                        //cajaFlotante.style.alignItems='top';                        
                         //cajaFlotante.style.flexWrap='wrap';
 }
 function carritoFormato(){
@@ -166,9 +164,9 @@ btnsCarrito.forEach((boton)=>{
            /*********mostrar la caja donde se cargaron los productos del carrito***************/
            /*********************************************************************************** */
             cajaCarrito() ;           
-            let div_ = carritoFormato();
-            cajaFlotante.appendChild(div_);
-            console.log(cajaFlotante);          
+            //let div_ = carritoFormato();
+           // cajaFlotante.appendChild(div_);
+                      
     });
 });
  
