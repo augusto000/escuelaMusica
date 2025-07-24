@@ -44,11 +44,12 @@ const producto =[
      },
      {
       Id:8,
-      titulo : "Intermedio Guitarra 2025",
-      btnCarrito:8,
+      titulo : "Avanzado PianoII 2025",
+      btnCarrito:7,
       descriBoton:"Agregar",
-      precio:"$22000"
+      precio:"$26900"
      },
+     
      {
       Id:9,
       titulo : "Introducción intrumentos 2025",
@@ -72,11 +73,18 @@ const producto =[
      },
      {
       Id:12,
-      titulo : "Guitarra Acústica 2025",
+      titulo : "Guitarra AcústicaUL 2025",
       btnCarrito:12,
       descriBoton:"Agregar",
       precio:"$4200"      
      }
+];
+let items =[{
+             id:"",
+             nombre:"",
+             cantidad:"",
+             precio:"",      
+            }
 ];
 let anio = new Date();
 let anioActual = anio.getFullYear();
