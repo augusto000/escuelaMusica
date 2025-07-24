@@ -9,7 +9,8 @@ html{
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;    
+    font-style: normal;
+        
 }
 body{min-width: 400px;
      
@@ -17,7 +18,8 @@ body{min-width: 400px;
 .contenedor-img-practicando{
     
     width: 78.9%;
-    margin: 0 auto;  
+    margin: 0 auto;
+    
 }
 /*efecto al contenedor de la imagen*/
 .contenedor-img-practicando:hover img{

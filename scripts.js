@@ -137,3 +137,18 @@ boton.addEventListener("click", function(event){
          limpiarCampos(event);          
          //cajaCarrito(event)
 });
+
+let n=5;
+let resultado=1;
+let i=1;
+ while (i<=n){
+      resultado = resultado*i;
+      i=i+1;
+ }
+ prompt(resultado);
+
+ let var1=2;
+ let var2 =3;
+ var2 =4;
+ var1=5;
+ prompt(var1*var2);
