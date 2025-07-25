@@ -144,9 +144,10 @@ for(let i = 1; i <= 12; i++){
         cardContainer.appendChild(nuevoBoton);
       }      
 }
-function cajaCarrito(){
-                        //hago aparecer la caja del carrito
-                        let cajaFlotante = document.getElementById('cajaFlotante');
+function agregaItemCarrito(id, cant, titulo, preci){
+                        //
+                        let itemsContenedor = document.getElementById('items-contenedor');
+                        console.log(id, cant, titulo, preci);
                         //cajaFlotante.style.alignItems='top';                        
                         //cajaFlotante.style.flexWrap='wrap';
 }
@@ -166,12 +167,13 @@ btnsCarrito.forEach((boton)=>{
            //prodClickeado toma el boton escogido.
            let prodClickeado = this.dataset.productoNro;
            let titulo = producto[prodClickeado].titulo;
-           let identificar = producto[prodClickeado-1].Id;
+           let id = producto[prodClickeado-1].Id;
            let preci = producto[prodClickeado].precio;
            let cant = acumuladorCantidad+1;
-           alert(cant+" " + titulo+" " + preci);
            
-             cajaCarrito() ;           
+           alert(id+" "+cant+" " + titulo+" " + preci);
+           
+             agregaItemCarrito(id, cant, titulo, preci) ;           
             //let div_ = carritoFormato();
            // cajaFlotante.appendChild(div_);
                       
