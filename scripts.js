@@ -145,11 +145,28 @@ for(let i = 1; i <= 12; i++){
       }      
 }
 function agregaItemCarrito(id, cant, titulo, preci){
-                        //
-                        let itemsContenedor = document.getElementById('items-contenedor');
-                        console.log(id, cant, titulo, preci);
-                        //cajaFlotante.style.alignItems='top';                        
-                        //cajaFlotante.style.flexWrap='wrap';
+                      //referenciar el contenedor
+                      let itemsContenedorPrincipal = document.getElementById('items-contenedor');
+                      let itemContenedorDst = document.createElement('div');
+                      itemContenedorDst.classList.add('itemContenedorDst');
+                      itemContenedorDst.style.display='flex';
+                      itemContenedorDst.style.width='100%';
+                      itemContenedorDst.style.height='20px';
+                      itemContenedorDst.style.fontSize='10px';
+                      console.log(id, cant, titulo, preci);
+                      //Creo e ingreso la cantidad a itemsContenedorDst
+                      let nuevoSpanCantidad = document.createElement('span');
+                      nuevoSpanCantidad.textContent = cant;
+                      itemContenedorDst.appendChild(nuevoSpanCantidad);
+                      //Creo e ingreso el titulo a itemsContenedorDst
+                      let nuevoSpanTitulo = document.createElement('span');
+                      nuevoSpanTitulo.textContent = titulo;
+                      itemContenedorDst.appendChild(nuevoSpanTitulo);
+                      let nuevoSpanPrecio =document.createElement('span');
+                      nuevoSpanPrecio.textContent = preci;
+                      itemContenedorDst.appendChild(nuevoSpanPrecio);
+
+                      itemsContenedorPrincipal.appendChild(itemContenedorDst);
 }
 function carritoFormato(){
         
@@ -171,9 +188,8 @@ btnsCarrito.forEach((boton)=>{
            let preci = producto[prodClickeado].precio;
            let cant = acumuladorCantidad+1;
            
-           alert(id+" "+cant+" " + titulo+" " + preci);
-           
-             agregaItemCarrito(id, cant, titulo, preci) ;           
+           //alert(id+" "+cant+" " + titulo+" " + preci);
+           agregaItemCarrito(id, cant, titulo, preci) ;           
             //let div_ = carritoFormato();
            // cajaFlotante.appendChild(div_);
                       
