@@ -150,19 +150,21 @@ function agregaItemCarrito(id, cant, titulo, preci){
                       let itemContenedorDst = document.createElement('div');
                       itemContenedorDst.classList.add('itemContenedorDst');
                       itemContenedorDst.style.display='flex';
-                      itemContenedorDst.style.width='100%';
-                      itemContenedorDst.style.height='20px';
-                      itemContenedorDst.style.fontSize='10px';
+                      itemContenedorDst.style.maxWidth='100%'
+                      itemContenedorDst.style.maxHeight='10px';
                       console.log(id, cant, titulo, preci);
                       //Creo e ingreso la cantidad a itemsContenedorDst
                       let nuevoSpanCantidad = document.createElement('span');
+                      nuevoSpanCantidad.style.fontSize='10px';
                       nuevoSpanCantidad.textContent = cant;
                       itemContenedorDst.appendChild(nuevoSpanCantidad);
                       //Creo e ingreso el titulo a itemsContenedorDst
                       let nuevoSpanTitulo = document.createElement('span');
                       nuevoSpanTitulo.textContent = titulo;
+                      nuevoSpanTitulo.style.fontSize='10px';
                       itemContenedorDst.appendChild(nuevoSpanTitulo);
                       let nuevoSpanPrecio =document.createElement('span');
+                      nuevoSpanPrecio.style.fontSize='10px';
                       nuevoSpanPrecio.textContent = preci;
                       itemContenedorDst.appendChild(nuevoSpanPrecio);
 
