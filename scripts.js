@@ -147,7 +147,11 @@ function agregaItemCarrito(id, titulo, preci){
                      let acumulador=1;                     
                       const itemsEncontrados = items.filter(elemento => elemento===id);
                       if (itemsEncontrados.length > 0){
-                          
+                              //Creo e ingreso la cantidad a itemsContenedorDst
+                      let nuevoSpanCantidad = document.createElement('span');
+                      nuevoSpanCantidad.style.fontSize='10px';
+                      nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
+                      itemContenedorDst.appendChild(nuevoSpanCantidad);    
                       }
                       else{
                         //referenciar el contenedor
@@ -160,7 +164,7 @@ function agregaItemCarrito(id, titulo, preci){
                       //Creo e ingreso la cantidad a itemsContenedorDst
                       let nuevoSpanCantidad = document.createElement('span');
                       nuevoSpanCantidad.style.fontSize='10px';
-                      nuevoSpanCantidad.textContent = itemsEncontrados.length;
+                      nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
                       itemContenedorDst.appendChild(nuevoSpanCantidad);
                       //Creo e ingreso el titulo a itemsContenedorDst
                       let nuevoSpanTitulo = document.createElement('span');
