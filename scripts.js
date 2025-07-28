@@ -152,40 +152,42 @@ for(let i = 1; i <= 12; i++){
         cardContainer.appendChild(nuevoBoton);
       }      
 }
-function agregaItemCarrito(id, titulo, preci){ 
-                     let acumulador=1;                     
-                      const itemsEncontrados = items.filter(elemento => elemento===id);
-                      if (itemsEncontrados.length > 0){
-                              //Creo e ingreso la cantidad a itemsContenedorDst
-                      let nuevoSpanCantidad = document.createElement('span');
-                      nuevoSpanCantidad.style.fontSize='10px';
-                      nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
-                      itemContenedorDst.appendChild(nuevoSpanCantidad);    
+function agregaItemCarrito(items ,id, titulo, preci){                                           
+                      const itemEncontrado = items.find(elemento => elemento.id===id);
+                      if (itemEncontrado){
+                        let  cuentoItemsMismoTipo = items.filter(item => item.id === id)
+                        let cantidad = cuentoItemsMismoTipo.length;
+                        //Creo e ingreso la cantidad a itemsContenedorDst
+                        let nuevoSpanCantidad = document.createElement('span');
+                        nuevoSpanCantidad.style.fontSize='10px';
+                        nuevoSpanCantidad.style.border='1px';
+                        nuevoSpanCantidad.textContent = cantidad;
+                        itemContenedorDst.appendChild(nuevoSpanCantidad);    
                       }
                       else{
                         //referenciar el contenedor
-                      let itemsContenedorPrincipal = document.getElementById('items-contenedor');
-                      let itemContenedorDst = document.createElement('div');
-                      itemContenedorDst.classList.add('itemContenedorDst');
-                      itemContenedorDst.style.display='flex';
-                      itemContenedorDst.style.maxWidth='100%'
-                      itemContenedorDst.style.maxHeight='10px';
-                      //Creo e ingreso la cantidad a itemsContenedorDst
-                      let nuevoSpanCantidad = document.createElement('span');
-                      nuevoSpanCantidad.style.fontSize='10px';
-                      nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
-                      itemContenedorDst.appendChild(nuevoSpanCantidad);
-                      //Creo e ingreso el titulo a itemsContenedorDst
-                      let nuevoSpanTitulo = document.createElement('span');
-                      nuevoSpanTitulo.textContent = titulo;
-                      nuevoSpanTitulo.style.fontSize='10px';
-                      itemContenedorDst.appendChild(nuevoSpanTitulo);
-                      let nuevoSpanPrecio =document.createElement('span');
-                      nuevoSpanPrecio.style.fontSize='10px';
-                      nuevoSpanPrecio.textContent = preci;
-                      itemContenedorDst.appendChild(nuevoSpanPrecio);
-                      itemsContenedorPrincipal.appendChild(itemContenedorDst);
-                      let totalDst = document.getElementById('total');
+                              let itemsContenedorPrincipal = document.getElementById('items-contenedor');
+                              let itemContenedorDst = document.createElement('div');
+                              itemContenedorDst.classList.add('itemContenedorDst');
+                              itemContenedorDst.style.display='flex';
+                              itemContenedorDst.style.maxWidth='100%'
+                              itemContenedorDst.style.maxHeight='10px';
+                              //Creo e ingreso la cantidad a itemsContenedorDst
+                              let nuevoSpanCantidad = document.createElement('span');
+                              nuevoSpanCantidad.style.fontSize='10px';
+                              //nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
+                              itemContenedorDst.appendChild(nuevoSpanCantidad);
+                              //Creo e ingreso el titulo a itemsContenedorDst
+                              let nuevoSpanTitulo = document.createElement('span');
+                              nuevoSpanTitulo.textContent = titulo;
+                              nuevoSpanTitulo.style.fontSize='10px';
+                              itemContenedorDst.appendChild(nuevoSpanTitulo);
+                              let nuevoSpanPrecio =document.createElement('span');
+                              nuevoSpanPrecio.style.fontSize='10px';
+                              nuevoSpanPrecio.textContent = preci;
+                              itemContenedorDst.appendChild(nuevoSpanPrecio);
+                              itemsContenedorPrincipal.appendChild(itemContenedorDst);
+                              let totalDst = document.getElementById('total');
                       }
       
                       
@@ -217,7 +219,7 @@ btnsCarrito.forEach((boton)=>{
            //let cant = acumuladorCantidad+1;
            let titulo = producto[prodClickeado].titulo;
            let preci = producto[prodClickeado].precio;
-           agregaItemCarrito(id, titulo, preci) ; 
+           agregaItemCarrito(items ,id, titulo, preci) ; 
                      
       });
 });
