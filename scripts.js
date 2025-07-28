@@ -1,13 +1,22 @@
 //Objeto literal que contiene los datos de la card
 const producto =[
+     
+     {
+      Id:0,
+      titulo : "Avanzado PianoII 2025",
+      btnCarrito:7,
+      descriBoton:"Agregar",
+      precio:"$26900"
+     },
      {
       Id:1,
       titulo : "Iniciación Guitarra 2025",
       btnCarrito:2,
       descriBoton:"Agregar",
       precio:"$18900"      
-      } ,
-      {Id:2,
+     },
+     {
+      Id:2,
       titulo : "Iniciación Guitarra 2025",
       btnCarrito:2,
       descriBoton:"Agregar",
@@ -144,6 +153,7 @@ for(let i = 1; i <= 12; i++){
         cardContainer.appendChild(nuevoBoton);
       }      
 }
+
 function agregaItemCarrito(id, cant, titulo, preci){
                       //referenciar el contenedor
                       let itemsContenedorPrincipal = document.getElementById('items-contenedor');
@@ -167,7 +177,10 @@ function agregaItemCarrito(id, cant, titulo, preci){
                       nuevoSpanPrecio.style.fontSize='10px';
                       nuevoSpanPrecio.textContent = preci;
                       itemContenedorDst.appendChild(nuevoSpanPrecio);
-
+                      //referencio precioOrigen
+                       
+                      precio_= Number(precio_) + Number(preci);
+                      console.log("Soy precio: "+precio_);
                       itemsContenedorPrincipal.appendChild(itemContenedorDst);
 }
 function carritoFormato(){
@@ -191,10 +204,7 @@ btnsCarrito.forEach((boton)=>{
            let cant = acumuladorCantidad+1;
            
            //alert(id+" "+cant+" " + titulo+" " + preci);
-           agregaItemCarrito(id, cant, titulo, preci) ;           
-            //let div_ = carritoFormato();
-           // cajaFlotante.appendChild(div_);
-                      
+           agregaItemCarrito(id, cant, titulo, preci);                      
     });
 });
  
