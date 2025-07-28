@@ -144,7 +144,8 @@ for(let i = 1; i <= 12; i++){
         cardContainer.appendChild(nuevoBoton);
       }      
 }
-function agregaItemCarrito(id, cant, titulo, preci){
+function agregaItemCarrito(id, cant, titulo, preci, pre){
+                      
                       //referenciar el contenedor
                       let itemsContenedorPrincipal = document.getElementById('items-contenedor');
                       let itemContenedorDst = document.createElement('div');
@@ -167,12 +168,13 @@ function agregaItemCarrito(id, cant, titulo, preci){
                       nuevoSpanPrecio.style.fontSize='10px';
                       nuevoSpanPrecio.textContent = preci;
                       itemContenedorDst.appendChild(nuevoSpanPrecio);
-
+                      
                       itemsContenedorPrincipal.appendChild(itemContenedorDst);
+                      let totalDst = document.getElementById('total');
+                      let t = totalDst.value;
+                      totalDst.innerText = producto[id].precio ;
 }
-function carritoFormato(){
-        
-}
+
 /**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
 let cajaFlotante = document.getElementById('cajaFlotante');
 /*referenciar la caja del carrito donde se insertarán los items*/
@@ -190,10 +192,9 @@ btnsCarrito.forEach((boton)=>{
            let preci = producto[prodClickeado].precio;
            let cant = acumuladorCantidad+1;
            
-           //alert(id+" "+cant+" " + titulo+" " + preci);
-           agregaItemCarrito(id, cant, titulo, preci) ;           
-            //let div_ = carritoFormato();
-           // cajaFlotante.appendChild(div_);
+           
+           agregaItemCarrito(id, cant, titulo, preci, pre=0) ;           
+            
                       
     });
 });
