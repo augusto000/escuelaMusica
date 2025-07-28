@@ -103,7 +103,6 @@ const producto =[
 let items =[{
              id:"",
              nombre:"",
-             cantidad:"",
              precio:"",      
             }
 ];
@@ -153,20 +152,28 @@ for(let i = 1; i <= 12; i++){
         cardContainer.appendChild(nuevoBoton);
       }      
 }
-
-function agregaItemCarrito(id, cant, titulo, preci){
-                      //referenciar el contenedor
+function agregaItemCarrito(id, titulo, preci){ 
+                     let acumulador=1;                     
+                      const itemsEncontrados = items.filter(elemento => elemento===id);
+                      if (itemsEncontrados.length > 0){
+                              //Creo e ingreso la cantidad a itemsContenedorDst
+                      let nuevoSpanCantidad = document.createElement('span');
+                      nuevoSpanCantidad.style.fontSize='10px';
+                      nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
+                      itemContenedorDst.appendChild(nuevoSpanCantidad);    
+                      }
+                      else{
+                        //referenciar el contenedor
                       let itemsContenedorPrincipal = document.getElementById('items-contenedor');
                       let itemContenedorDst = document.createElement('div');
                       itemContenedorDst.classList.add('itemContenedorDst');
                       itemContenedorDst.style.display='flex';
                       itemContenedorDst.style.maxWidth='100%'
                       itemContenedorDst.style.maxHeight='10px';
-                      console.log(id, cant, titulo, preci);
                       //Creo e ingreso la cantidad a itemsContenedorDst
                       let nuevoSpanCantidad = document.createElement('span');
                       nuevoSpanCantidad.style.fontSize='10px';
-                      nuevoSpanCantidad.textContent = cant;
+                      nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
                       itemContenedorDst.appendChild(nuevoSpanCantidad);
                       //Creo e ingreso el titulo a itemsContenedorDst
                       let nuevoSpanTitulo = document.createElement('span');
@@ -177,15 +184,24 @@ function agregaItemCarrito(id, cant, titulo, preci){
                       nuevoSpanPrecio.style.fontSize='10px';
                       nuevoSpanPrecio.textContent = preci;
                       itemContenedorDst.appendChild(nuevoSpanPrecio);
-                      //referencio precioOrigen
-                       
-                      precio_= Number(precio_) + Number(preci);
-                      console.log("Soy precio: "+precio_);
                       itemsContenedorPrincipal.appendChild(itemContenedorDst);
+                      let totalDst = document.getElementById('total');
+                      }
+      
+                      
+                      
+                      /**id:"",
+                         nombre:"",
+                         precio:"",
+                       * 
+                       */
+                      items.push(id);
+                      items.push(titulo);
+                      items.push(preci);
+                      
+
 }
-function carritoFormato(){
-        
-}
+
 /**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
 let cajaFlotante = document.getElementById('cajaFlotante');
 /*referenciar la caja del carrito donde se insertarán los items*/
@@ -195,17 +211,15 @@ btnsCarrito.forEach((boton)=>{
            /**Comentario: al usar dataset,formatea el output a camelcase por eso
             * buscarlo como "camelcase : productoNro"*/
            //console.log('Se hizo click en el boton :', this.dataset.productoNro);
-           let acumuladorCantidad =0;
            //prodClickeado toma el boton escogido.
-           let prodClickeado = this.dataset.productoNro;
-           let titulo = producto[prodClickeado].titulo;
+           let prodClickeado = this.dataset.productoNro;           
            let id = producto[prodClickeado-1].Id;
+           //let cant = acumuladorCantidad+1;
+           let titulo = producto[prodClickeado].titulo;
            let preci = producto[prodClickeado].precio;
-           let cant = acumuladorCantidad+1;
-           
-           //alert(id+" "+cant+" " + titulo+" " + preci);
-           agregaItemCarrito(id, cant, titulo, preci);                      
-    });
+           agregaItemCarrito(id, titulo, preci) ; 
+                     
+      });
 });
  
 //referencio al boton del formulario
