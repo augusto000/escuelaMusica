@@ -153,16 +153,60 @@ for(let i = 1; i <= 12; i++){
       }      
 }
 function agregaItemCarrito(items ,id, titulo, preci){                                           
-                      const itemEncontrado = items.find(elemento => elemento.id===id);
+             items.push(id);
+             items.push(titulo);
+             items.push(preci);         
+             const itemEncontrado = items.find(elemento => elemento===id);
+                     
                       if (itemEncontrado){
-                        let  cuentoItemsMismoTipo = items.filter(item => item.id === id)
+                        let  itemContenedorDst = document.getElementById('items-contenedor');
+                        itemContenedorDst.style.width = '100px';
+                        itemContenedorDst.style.backgroundColor = 'white';
+                        itemContenedorDst.style.display = 'flex';
+                        itemContenedorDst.style.marginLeft='2px';                        
+                        //itemContenedorDst.style.justifyContent ='left';
+                        let  cuentoItemsMismoTipo = items.filter(item => item === id)
                         let cantidad = cuentoItemsMismoTipo.length;
                         //Creo e ingreso la cantidad a itemsContenedorDst
                         let nuevoSpanCantidad = document.createElement('span');
-                        nuevoSpanCantidad.style.fontSize='10px';
-                        nuevoSpanCantidad.style.border='1px';
-                        nuevoSpanCantidad.textContent = cantidad;
-                        itemContenedorDst.appendChild(nuevoSpanCantidad);    
+                        let nuevoSpanTitulo = document.createElement('span');
+                        let nuevoSpanPrecio = document.createElement('span');
+                          if(cantidad === 1){
+                              //configurar cantidad
+                              nuevoSpanCantidad.style.fontSize='10px';
+                              nuevoSpanCantidad.style.width = '50px'
+                              nuevoSpanCantidad.style.border='1px solid black';
+                              nuevoSpanCantidad.textContent = ' ';
+                              nuevoSpanCantidad.textContent = cantidad;
+                              itemContenedorDst.appendChild(nuevoSpanCantidad);
+                              //configurar titulo
+                              nuevoSpanTitulo.textContent = titulo;
+                              nuevoSpanTitulo.style.width = '25px';
+                              nuevoSpanTitulo.style.fontSize = '10px';
+                              nuevoSpanTitulo.style.textAlign = 'center';
+                              itemContenedorDst.appendChild(nuevoSpanTitulo);
+                              //configurar el precio
+                              nuevoSpanPrecio.textContent = preci;
+                              nuevoSpanPrecio.style.width = '10px';
+                              nuevoSpanPrecio.style.textAlign = 'center';
+                              nuevoSpanPrecio.style.fontSize  = '10px';
+                              itemContenedorDst.appendChild(nuevoSpanPrecio);
+                          }
+                          else{
+                              //borrar elemento hijo span para que se borre el valor dentro
+                              //itemContenedorDst.textContent = ' ';
+                              let cantidad = cuentoItemsMismoTipo.length;
+                              let nuevoSpanCantidad = document.createElement('span');
+                              nuevoSpanCantidad.style.fontSize='10px';
+                              nuevoSpanCantidad.style.border='1px';
+                              nuevoSpanCantidad.textContent = cantidad;
+                              itemContenedorDst.appendChild(nuevoSpanCantidad);
+                                                            
+                              //nuevoSpanCantidad.textContent = ' ';
+                              //nuevoSpanCantidad.textContent = cantidad;
+                               
+                          }
+                            
                       }
                       else{
                         //referenciar el contenedor
@@ -188,20 +232,13 @@ function agregaItemCarrito(items ,id, titulo, preci){
                               itemContenedorDst.appendChild(nuevoSpanPrecio);
                               itemsContenedorPrincipal.appendChild(itemContenedorDst);
                               let totalDst = document.getElementById('total');
-                      }
-      
-                      
+                      }                          
                       
                       /**id:"",
                          nombre:"",
                          precio:"",
                        * 
                        */
-                      items.push(id);
-                      items.push(titulo);
-                      items.push(preci);
-                      
-
 }
 
 /**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
