@@ -1,189 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--titulo modificado con Jscript-->
-    <title>Document</title>
-   <!-- <link rel="icon" href="media/guitar-solid.svg" type="image/x-icon">-->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/d514645d85.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <title>CMú</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-  <header>
-    <!--Caja Flotante para el Carrito-->
-    <section id="cajaFlotante"><h1>Carrito</h1>
-        <div id="encabezado">
-              <span class="enca cant">Cant</span>
-              <span class="enca desc">Descripción</span>
-              <span class="enca precio">Precio</span>
-        </div>
-        <div id="items-contenedor"></div>
-        <div class="pie-cajaFlotante">
-              <p>Total</p>
-              <span id="total">:</span>
-        </div>
-    
-    </section>
-    <div class="contenedor-img-practicando">
-        <img src="media/guitarra.jpg"
-         alt="imagen-de-guitarra" title="imagen-de-guitarra">
-    </div>
-    <nav>
-    <ul id="lista-ul">
-      <li class="item1"><a class="a1-lista" href="#">Home</a></li>
-      <li class="item2"><a class="a2-lista" href="#">Productos</a></li>
-      <li class="item3"><a class="a3-lista" href="#">Foro</a></li>
-      <li class="item4"><a class="a4-lista" href="#">Contactenos</a></li>
-    </ul>
-  </nav>
-  </header>
-  <main>
-    <div class="contenedor-div">
-      <div class="izq">
-           <iframe width="130" height="100%" src="https://www.youtube.com/embed/llvHQlUbPM8?list=PLQglTXA7OeRGt4d1e2uxCt0ogJcjcUShG" title="Aprende a tocar guitarra - curso para PRINCIPIANTES - LECCIÓN 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <header>
+        <h1>Nuestros Cursos de Música</h1>
+    </header>
 
+    <main>
+        <section id="product-grid">
+            <h2>Cursos Disponibles</h2>
+            <div id="cards">
+                </div>
+        </section>
 
-
-          
-      </div>
-        <div class="centro"> </div>
-        <div class="derecha">
-          <span id="texto-fila1">Nuestra escuela de música es una institución 
-                                 educativa dedicada a la enseñanza de la música,
-                                 que abarca desde la iniciación musical.
-                                 </span>
-        </div>
-    </div>
-    <div class="contenedor-div2">
-        <div class="izq">
-          <iframe src="https://www.tusclasesdeguitarra.com/?gad_source=1&gad_
-                      campaignid=16258735175&gbraid=0AAAAADzjeYDQejL2rlspx2bOzCmun3UN5&gc
-                      lid=Cj0KCQjwpf7CBhCfARIsANIETVqmmgVhch1U82sXc1aoFcPqBTqFilgaR3XT1BN
-                      s0xZCiv22b3dB9sYaAiMbEALw_wcB"
-                      frameborder="0" width="130px" height="100%">
-          </iframe>
-        </div>
-        <div class="centro2"></div>
-        <div class="derecha2">
-          <span id="texto-fila2">Se ha demostrado que la educación musical tiene
-                                varios impactos positivos en los estudiantes.
-                                Además de utilizar investigaciones y anécdotas.</span>
-        </div>
-    </div>
-    <div class="contenedor-productos"> <h2>Productos</h2></div>
-      <div id="cards"> 
-         <!--<div id="dos"></div>
-         <div id="tres"></div>-->             
-            <!--
-        <img src="media/2.jpeg" alt="">
-             <img src="media/3.jpeg" alt="">
-             <img src="media/4.jpeg" alt="">
-             <img src="media/5.jpeg" alt="">
-         -->
-      </div>
-    
-    <section id="sec">
-      <div class="tabla-tus-datos"><span>Tus datos ingresados</span> </div>
-      <div class="responsive-table">
-      <table>
-         <thead>
-           <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <!--<th>Direcci&oacute;n</th>
-            <th>Tel&eacute;fono</th>-->
-            <th>Mail</th>
-            <!--<th>Cup&oacute;n</th>-->
-            <th>Observaciones</th>
-           </tr> 
-         </thead>
-        
-         <tbody id="element">
-          <td id="nombreDst"></td>
-          <td id="apeDst"></td>
-          <!--<td>los prados 454</td>
-          <td>3813323498</td>-->
-          <td id="emailDst"></td>
-          <!--<td>002-4565</td>-->
-          <td id="observacionesDst"></td>
-         </tbody>
-        
-      </table>
-      </div>
-    </section>
-
-    <!--Formulario-->
-    <div id="contenedor-formulario">
-     <form action="https://formspree.io/f/xeoknnow" id="formulario" method="POST">        
-          <h2>Suscribite :</h2>
-        <div class="itemForm contenedor-item1-form">
-            <label for="nombreOrg" name="nombreOrg">Nombre :
-                <input type="text" id="nombreOrg" name="nombreOrg" maxlength="20">
-          </label>
-        </div>
-        <div class="itemForm contenedor-item2-form">
-          <label for="apellidoOrg" name="apellidoOrg">Apellido :
-              <input type="text" id="apellidoOrg" name="apellidoOrg" maxlength="20">
-          </label>
-        </div>  
-        <!--
-        <div class="itemForm contenedor-item3-form">
-          <label for="direccionOrg" name="direccionOrg">Direcci&oacute;n :
-             <input type="text" id="direccionOrg" name="direccionOrg" maxlength="15">
-          </label>
-        </div>        
-       
-        <div class="itemForm contenedor-item4-form">
-          <label for="telefonoOrg" name="telefonoOrg">Tel&eacute;fono :
-             <input type="text" id="telefonoOrg" name="telefonoOrg" maxlength="13">
-          </label>
-        </div>
-        -->
-        <div class="itemForm contenedor-item5-form">
-          <label for="emailOrg" name="emailOrg">Email :
-            <input type="mail" id="emailOrg" name="emailOrg" maxlength="30" placeholder="@">
-          </label>
-        </div>
-        <!--       
-        <div class="itemForm contenedor-item6-form">
-          <label for="cuponOrg" name="cuponOrg">Cup&oacute;n</label> :
-              <input type="text" id="cuponOrg" name="cuponOrg" maxlength="10">
-          </label>
-        </div>
-        -->
-        <div class="itemForm contenedor-item7-form">
-             <label for="observacionesOrg" >Observaciones :</label>
-             <textarea name="observacionesOrg" id="observacionesOrg" rows="4" cols="21" placeholder="..escribe tu comentario y tu dirección completa" > </textarea>
-        </div>       
-       <button type="submit" id="btnForm"> Enviar </button>   
-      </form>
-  </div>
-   
-  <section id="resenias">
-    <div id="contenedor-titulo-reseñas">
-    <h1>Reseñas</h1>
-  </div> 
-  </section>
-  <footer>
-            <div id="container-anio">
-               <span id="copy">&copy;</span>
-               <span id="anio_">2000</span>
-               <span id="comi">/ 25014</span>
+        <aside id="cajaFlotante" class="cart-hidden">
+            <h3>Tu Carrito</h3>
+            <div id="items-contenedor">
+                El carrito está vacío.
             </div>
-            <div id="container-autor">
-               <span id="autor">autor: Augusto Achá</span>
-            </div>   
-          <div id="container-icons-media">
-               <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
-               <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
-               <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>     
-          </div>        
-    </footer>   
- </main>
+            <div id="total-contenedor">
+                <strong>Total: </strong><span id="total">$0</span>
+            </div>
+        </aside>
+
+        <section id="contact-form-section">
+            <h2>Contáctanos</h2>
+            <form id="formulario">
+                <label for="nombreOrg">Nombre:</label>
+                <input type="text" id="nombreOrg" name="nombre" required>
+
+                <label for="apellidoOrg">Apellido:</label>
+                <input type="text" id="apellidoOrg" name="apellido" required>
+
+                <label for="emailOrg">Email:</label>
+                <input type="email" id="emailOrg" name="email" required>
+
+                <label for="observacionesOrg">Observaciones:</label>
+                <textarea id="observacionesOrg" name="observaciones" rows="4"></textarea>
+
+                <button type="submit" id="btnForm">Enviar Datos</button>
+            </form>
+
+            <div id="form-output">
+                <h3>Datos Enviados:</h3>
+                <p><strong>Nombre:</strong> <span id="nombreDst"></span></p>
+                <p><strong>Apellido:</strong> <span id="apeDst"></span></p>
+                <p><strong>Email:</strong> <span id="emailDst"></span></p>
+                <p><strong>Observaciones:</strong> <span id="observacionesDst"></span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="anio_"></span> CMú. Todos los derechos reservados.</p>
+    </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
