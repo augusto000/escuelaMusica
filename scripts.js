@@ -198,53 +198,220 @@ function renderProductCards() {
         cardContainer.appendChild(nuevoBoton);
     }
 }
+function agregaItemCarrito(items ,id, titulo, preci){                                           
+             items.push(id);
+             items.push(titulo);
+             items.push(preci);         
+             const itemEncontrado = items.find(elemento => elemento===id);
+                     
+                      if (itemEncontrado){
+                        let  itemContenedorDst = document.getElementById('items-contenedor');
+                        itemContenedorDst.style.width = '100px';
+                        itemContenedorDst.style.backgroundColor = 'white';
+                        itemContenedorDst.style.display = 'flex';
+                        itemContenedorDst.style.marginLeft='2px';                        
+                        //itemContenedorDst.style.justifyContent ='left';
+                        let  cuentoItemsMismoTipo = items.filter(item => item === id)
+                        let cantidad = cuentoItemsMismoTipo.length;
+                        //Creo e ingreso la cantidad a itemsContenedorDst
+                        let nuevoSpanCantidad = document.createElement('span');
+                        let nuevoSpanTitulo = document.createElement('span');
+                        let nuevoSpanPrecio = document.createElement('span');
+                          if(cantidad === 1){
+                              //configurar cantidad
+                              nuevoSpanCantidad.style.fontSize='10px';
+                              nuevoSpanCantidad.style.width = '50px'
+                              nuevoSpanCantidad.style.border='1px solid black';
+                              nuevoSpanCantidad.textContent = ' ';
+                              nuevoSpanCantidad.textContent = cantidad;
+                              itemContenedorDst.appendChild(nuevoSpanCantidad);
+                              //configurar titulo
+                              nuevoSpanTitulo.textContent = titulo;
+                              nuevoSpanTitulo.style.width = '25px';
+                              nuevoSpanTitulo.style.fontSize = '10px';
+                              nuevoSpanTitulo.style.textAlign = 'center';
+                              itemContenedorDst.appendChild(nuevoSpanTitulo);
+                              //configurar el precio
+                              nuevoSpanPrecio.textContent = preci;
+                              nuevoSpanPrecio.style.width = '10px';
+                              nuevoSpanPrecio.style.textAlign = 'center';
+                              nuevoSpanPrecio.style.fontSize  = '10px';
+                              itemContenedorDst.appendChild(nuevoSpanPrecio);
+                          }
+                          else{
+                              //borrar elemento hijo span para que se borre el valor dentro
+                              //itemContenedorDst.textContent = ' ';
+                              let cantidad = cuentoItemsMismoTipo.length;
+                              let nuevoSpanCantidad = document.createElement('span');
+                              nuevoSpanCantidad.style.fontSize='10px';
+                              nuevoSpanCantidad.style.border='1px';
+                              nuevoSpanCantidad.textContent = cantidad;
+                              itemContenedorDst.appendChild(nuevoSpanCantidad);
+                                                            
+                              //nuevoSpanCantidad.textContent = ' ';
+                              //nuevoSpanCantidad.textContent = cantidad;
+                               
+                          }
+                            
+                      }
+                      else{
+                        //referenciar el contenedor
+                              let itemsContenedorPrincipal = document.getElementById('items-contenedor');
+                              let itemContenedorDst = document.createElement('div');
+                              itemContenedorDst.classList.add('itemContenedorDst');
+                              itemContenedorDst.style.display='flex';
+                              itemContenedorDst.style.maxWidth='100%'
+                              itemContenedorDst.style.maxHeight='10px';
+                              //Creo e ingreso la cantidad a itemsContenedorDst
+                              let nuevoSpanCantidad = document.createElement('span');
+                              nuevoSpanCantidad.style.fontSize='10px';
+                              //nuevoSpanCantidad.textContent = itemsEncontrados.length+1;
+                              itemContenedorDst.appendChild(nuevoSpanCantidad);
+                              //Creo e ingreso el titulo a itemsContenedorDst
+                              let nuevoSpanTitulo = document.createElement('span');
+                              nuevoSpanTitulo.textContent = titulo;
+                              nuevoSpanTitulo.style.fontSize='10px';
+                              itemContenedorDst.appendChild(nuevoSpanTitulo);
+                              let nuevoSpanPrecio =document.createElement('span');
+                              nuevoSpanPrecio.style.fontSize='10px';
+                              nuevoSpanPrecio.textContent = preci;
+                              itemContenedorDst.appendChild(nuevoSpanPrecio);
+                              itemsContenedorPrincipal.appendChild(itemContenedorDst);
+                              let totalDst = document.getElementById('total');
+                      }                          
+                      
+                      /**id:"",
+                         nombre:"",
+                         precio:"",
+                       * 
+                       */
+}
 
-// --- Manejo de Eventos ---
-
-// Delegación de eventos para los botones "Agregar al Carrito"
-cardsContainer.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btnCarrito')) {
-        const prodClickeadoIndex = parseInt(event.target.dataset.productoNro);
-        const selectedProduct = producto[prodClickeadoIndex];
-        updateCart(selectedProduct);
-    }
+/**Referenciar la caja flotante donde se insertaran los items que los clientes vallan escogiendo */
+let cajaFlotante = document.getElementById('cajaFlotante');
+/*referenciar la caja del carrito donde se insertarán los items*/
+let btnsCarrito = document.querySelectorAll('.btnCarrito');
+btnsCarrito.forEach((boton)=>{
+    boton.addEventListener('click',function(){
+           /**Comentario: al usar dataset,formatea el output a camelcase por eso
+            * buscarlo como "camelcase : productoNro"*/
+           //console.log('Se hizo click en el boton :', this.dataset.productoNro);
+           //prodClickeado toma el boton escogido.
+           let prodClickeado = this.dataset.productoNro;           
+           let id = producto[prodClickeado-1].Id;
+           //let cant = acumuladorCantidad+1;
+           let titulo = producto[prodClickeado].titulo;
+           let preci = producto[prodClickeado].precio;
+           agregaItemCarrito(items ,id, titulo, preci) ; 
+                     
+      });
 });
-
-// Manejador de envío del formulario
-btnForm.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevenir el envío por defecto del formulario
-
-    const nombre = nombreOrgInput.value.trim();
-    const apellido = apellidoOrgInput.value.trim();
-    const email = emailOrgInput.value.trim();
-    const observaciones = observacionesOrgInput.value.trim();
-
-    if (nombre && apellido && email && observaciones) {
-        nombreDstSpan.textContent = nombre;
-        apeDstSpan.textContent = apellido;
-        emailDstSpan.textContent = email;
-        observacionesDstSpan.textContent = observaciones;
-        alert('¡Datos guardados correctamente!');
-        form.reset(); // Limpiar los campos del formulario
-    } else {
-        alert('Atención: debe escribir todos sus datos.');
+ 
+//referencio al boton del formulario
+let boton = document.getElementById('btnForm');
+function campoNombre(event){                        
+                        //referencio para limpiar el inputText  
+                       // let refInputText = document.getElementById('nombreOrg');
+                        //Tomo el valor que contiene a travez de .value
+                        let nombreOrg = document.getElementById('nombreOrg').value;
+                        //return nombreOrg;
+                  //si esta vacía la cadena.
+                  if(nombreOrg.trim() !== ''){                        
+                        //apunto al campo destino
+                        let nombreDst = document.getElementById('nombreDst');
+                        nombreDst.innerText = nombreOrg;
+                        //refInputText.value = " ";
+                        //que no recargue la página
+                        //event.preventDefault();
+                        return nombreOrg;
+                        noRecargarPagina(event);                        
+                  }  
+                  else{
+                        alert(`Atención: debe escribir todos sus datos.`);
+                        //limpiar de todas maneras.
+                        //limpiarCampos();
+                        //No recargar la página                        
+                        noRecargarPagina(event);
+                  }                         
     }
-});
-
-// --- Inicialización al cargar el DOM ---
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Establecer el año actual en el pie de página
-    anio_.textContent = new Date().getFullYear();
-    // Establecer el título de la página
-    document.title = 'CMú';
-
-    // Cargar los datos del carrito desde el almacenamiento local
-    loadCartFromLocalStorage();
-    // Renderizar las tarjetas de productos
-    renderProductCards();
-    // Renderizar la visualización del carrito con los datos cargados
-    renderCart();
-    // Calcular y mostrar el total del carrito con los datos cargados
-    calculateAndDisplayTotal();
+    function campoApellido(event){                        
+                        //referencio para limpiar el inputText 
+                        let refApeOrg = document.getElementById('apellidoOrg');                       
+                        //Tomo el valor que contiene a travez de .value
+                        let apellidoOrg = document.getElementById('apellidoOrg').value;
+                        return apellidoOrg;
+                  //si esta vacía la cadena.
+                  if(apellidoOrg.trim() !== ''){                        
+                        //apunto al campo destino
+                        let apellidoDst = document.getElementById('apeDst');
+                        //copiar valor
+                        apellidoDst.innerText = apellidoOrg;
+                        //refInputText.value = " ";
+                        //que no recargue la página
+                        //event.preventDefault();
+                        //alert("Datos guardados!");
+                        noRecargarPagina(event);                        
+                  }  
+                  else{
+                        alert(`Atención: debe escribir todos sus datos.`);
+                        //limpiar de todas maneras.
+                        //limpiarCampos();
+                        //No recargar la página                        
+                        noRecargarPagina(event);
+                  }                         
+    }
+    function noRecargarPagina(event){
+          event.preventDefault();
+    }        
+    function verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg){
+                        //si esta vacía la cadena.
+                  if(nombreOrg.trim() !== '' && apellidoOrg.trim() !== '' && emailOrg.trim() !== '' && observacionesOrg.trim() !== ''){                        
+                        //apunto al campo destino
+                        let nombreDst = document.getElementById('nombreDst');
+                        nombreDst.innerText = nombreOrg;
+                        //apunto al campo destino
+                        let apellidoDst = document.getElementById('apeDst');
+                        //copiar valor
+                        apellidoDst.innerText = apellidoOrg;
+                        //copiar el valor desde el origen al destino
+                        let emailDst = document.getElementById('emailDst');
+                        emailDst.textContent = emailOrg;
+                        //copiar el valor desde observacionesDst
+                        let observacionesDst = document.getElementById('observacionesDst');
+                        observacionesDst.textContent = observacionesOrg;                        
+                  }
+                  else{
+                        alert(`Atención: debe escribir todos sus datos.`);
+                        //no recargar la pagina
+                        noRecargarPagina(event);
+                        //limpiarCampos(event);
+                        limpiarCampos(event);
+                  }                  
+    }
+    function campoEmail(){
+                        //Tomar el valor del input
+                        let emailOrg = document.getElementById('emailOrg').value;
+                        //referencio emailDst de destino
+                        let emailDst = document.getElementById('emailDst');
+                        //traspasar el valor
+                        return emailOrg;
+                  }
+      function campoObservacion(event){
+                        //referencio y tomo el valor del input de origen
+                        let observacionesOrg = document.getElementById('observacionesOrg').value;
+                        //retorno el valor
+                        return observacionesOrg;
+      }
+      function limpiarCampos(event){
+                        formulario.reset();                        
+    }
+/**Boton del Formulario */    
+boton.addEventListener("click", function(event){
+         /*Verifico los datos en los campos ingresador*/
+         let nombreOrg = campoNombre(event);
+         let apellidoOrg = campoApellido(event);
+         let emailOrg = campoEmail(event);
+         let observacionesOrg = campoObservacion(event);
+         verificarDatos(event, nombreOrg, apellidoOrg, emailOrg, observacionesOrg);
+         limpiarCampos(event);       
 });
